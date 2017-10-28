@@ -1,0 +1,19 @@
+METODO PER RESETTARE PASSWORD MODELLI 2500 E 2600
+
+
+2500
+
+Dopo accensione premere	BREAK entro 60 secondi
+
+Al prompt premere "o ENTER" 
+
+Premere o/r 0x2142 ENTER
+
+
+2600
+
+Dopo accensione premere CTRL PAUSA entro 60 secondi.
+
+Al prompt digitare:  confreg 0x2141 ENTER
+
+Alla richiesta reset : reset ENTER

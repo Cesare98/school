@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ContoCorrenteWeb">
+  <ClassDiagramComponents>
+    <Class name="LoginFrame" package="contocorrenteweb" visibility="public" xPosition="387.0" yPosition="-5.0">
+      <Fields>
+        <Field name="lblUsername" type="JLabel" visibility="package"/>
+        <Field name="txtUsername" type="JTextField" visibility="package"/>
+        <Field name="jPassword" type="JPasswordField" visibility="package"/>
+        <Field name="btnLogin" type="JButton" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+        <Method name="validatePassword" returnType="boolean" visibility="package">
+          <Argument type="char[]" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Cliente" package="contocorrenteweb" visibility="public" xPosition="257.0" yPosition="566.0">
+      <Fields>
+        <Field name="lblUsername" type="JLabel" visibility="private"/>
+        <Field name="btnDeposita" type="JButton" visibility="private"/>
+        <Field name="client" type="Socket" visibility="private"/>
+        <Field name="txtServer" type="String" visibility="private"/>
+        <Field name="inFromServer" type="DataInputStream" visibility="private"/>
+        <Field name="outToServer" type="DataOutputStream" visibility="private"/>
+        <Field name="strFromServer" type="String" visibility="private"/>
+        <Field name="cc" type="ContoCorrente" visibility="private"/>
+        <Field name="money" type="int" visibility="private"/>
+        <Field name="userName" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="txtServer"/>
+          <Argument type="int" name="port"/>
+          <Argument type="String" name="userName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="connetti" returnType="Socket" visibility="public" isSynchronized="true"/>
+        <Method name="withdrawalOperation" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="String" name="value"/>
+        </Method>
+        <Method name="depositOperation" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="String" name="value"/>
+        </Method>
+        <Method name="getMoney" returnType="int" visibility="public"/>
+        <Method name="getConto" returnType="ContoCorrente" visibility="public"/>
+        <Method name="setConto" returnType="void" visibility="public">
+          <Argument type="ContoCorrente" name="cc"/>
+        </Method>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="Observable" name="o"/>
+          <Argument type="Object" name="arg"/>
+        </Method>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ContoCorrenteWeb" package="contocorrenteweb" visibility="public" xPosition="911.0" yPosition="58.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ContoCorrente" package="contocorrenteweb" visibility="public" xPosition="878.0" yPosition="636.0">
+      <Fields>
+        <Field name="money" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="money"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="bankDeposit" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="String" name="money"/>
+        </Method>
+        <Method name="bankWithdrawal" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="String" name="money"/>
+        </Method>
+        <Method name="refresh" returnType="void" visibility="public" isSynchronized="true"/>
+        <Method name="getConto" returnType="ContoCorrente" visibility="public" isSynchronized="true"/>
+        <Method name="getSoldiConto" returnType="int" visibility="public" isSynchronized="true"/>
+      </Methods>
+    </Class>
+    <Class name="ServerFrame" package="contocorrenteweb" visibility="public" xPosition="-6.0" yPosition="302.0">
+      <Fields>
+        <Field name="btnStartServer" type="JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MultiServer" package="contocorrenteweb" visibility="public" xPosition="320.0" yPosition="214.0">
+      <Fields>
+        <Field name="fileName" type="String" visibility="protected" isStatic="true"/>
+        <Field name="authentication" type="boolean" visibility="protected" isStatic="true"/>
+        <Field name="servers" type="ArrayList&lt;ServerThread&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public"/>
+        <Method name="getServers" returnType="ArrayList&lt;ServerThread&gt;" visibility="public" isStatic="true"/>
+        <Method name="createUser" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="txtServer"/>
+          <Argument type="int" name="port"/>
+          <Argument type="String" name="username"/>
+        </Method>
+        <Method name="createNewDatabase" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="createNewTable" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="addNewUser" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="username"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="checkCredentials" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="username"/>
+          <Argument type="char[]" name="password"/>
+        </Method>
+        <Method name="connect" returnType="Connection" visibility="private" isStatic="true"/>
+        <Method name="getAuthentication" returnType="boolean" visibility="public" isStatic="true"/>
+        <Method name="setAuthentication" returnType="void" visibility="public" isStatic="true">
+          <Argument type="boolean" name="b"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ServerThread" package="contocorrenteweb" visibility="public" xPosition="817.0" yPosition="291.0">
+      <Fields>
+        <Field name="client" type="Socket" visibility="private"/>
+        <Field name="inDalClient" type="DataInputStream" visibility="private"/>
+        <Field name="outVersoClient" type="DataOutputStream" visibility="private"/>
+        <Field name="cc" type="ContoCorrente" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Socket" name="socket"/>
+          <Argument type="ContoCorrente" name="cc"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+        <Method name="comunica" returnType="void" visibility="public" isSynchronized="true"/>
+        <Method name="getConto" returnType="ContoCorrente" visibility="public"/>
+        <Method name="getSoldiConto" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="contocorrenteweb.LoginFrame" target="contocorrenteweb.MultiServer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cc" source="contocorrenteweb.Cliente" target="contocorrenteweb.ContoCorrente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="contocorrenteweb.ServerThread" target="contocorrenteweb.ContoCorrente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="create" source="contocorrenteweb.MultiServer" target="contocorrenteweb.Cliente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="create" source="contocorrenteweb.ServerFrame" target="contocorrenteweb.MultiServer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="contocorrenteweb.ContoCorrenteWeb" target="contocorrenteweb.LoginFrame" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cc" source="contocorrenteweb.ServerThread" target="contocorrenteweb.ContoCorrente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="servers" source="contocorrenteweb.MultiServer" target="contocorrenteweb.ServerThread" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;ServerThread&gt;"/>
+    <UseRelation source="contocorrenteweb.MultiServer" target="contocorrenteweb.ServerThread" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="contocorrenteweb.Cliente" target="contocorrenteweb.ContoCorrente" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

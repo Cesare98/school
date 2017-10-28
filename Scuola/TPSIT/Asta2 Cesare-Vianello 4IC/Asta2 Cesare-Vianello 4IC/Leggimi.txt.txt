@@ -1,0 +1,5 @@
+Il server accetta più connessioni;
+Il server restituisce la migliore offerta;
+IL server inserisce gl'oggetti;
+Il timer è da sistemare;
+La presentazione è da sistemare;

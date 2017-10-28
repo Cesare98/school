@@ -1,0 +1,529 @@
+From: <Salvato da Windows Internet Explorer 7>
+Subject: =?iso-8859-1?Q?I_due_livelli_di_accesso_al_router=A0_Il_primo_approccio_c?=
+	=?iso-8859-1?Q?on_il_Router_Cisco_2503_si_effettua_attravesro_la_linea_di?=
+	=?iso-8859-1?Q?_comando_del_sistema?=
+Date: Thu, 2 Oct 2008 11:53:29 +0200
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://192.168.63.252/RouterCisco/router_caste1.htm
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3350
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>I due livelli di accesso al router=A0 Il primo =
+approccio con il Router Cisco 2503 si effettua attravesro la linea di =
+comando del sistema</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.6000.16705" name=3DGENERATOR>
+<META content=3DFrontPage.Editor.Document name=3DProgId>
+<STYLE>.DOS {
+	FONT-WEIGHT: bold; COLOR: #ffffff; FONT-FAMILY: Courier New; =
+BACKGROUND-COLOR: #000000
+}
+</STYLE>
+</HEAD>
+<BODY>
+<P><B>I due livelli di accesso al router</B><BR><BR>Il primo approccio =
+con il=20
+<B>Router Cisco 2503</B> si effettua attravesro la linea di comando del =
+sistema=20
+operativo <B>Cisco IOS</B>.<BR>Il sistema operativo da la modalit=E0 di =
+accesso a=20
+diversi livelli:=20
+<UL>
+  <LI>Il livello <B>utente</B> : include servizi riguardanti il =
+controllo del=20
+  funzionamento del router (con questa modalit=E0 di accesso le =
+modifiche alla=20
+  configurazione non verranno accettate).=20
+  <LI>Il livello <B>privilegiato</B> : include servizi riguardanti la=20
+  configurazione "avanzata" del router. </LI></UL>La prima volta che si =
+acceder=E0=20
+al router si acceder=E0 in modalit=E0 utente, se osservate bene il =
+metodo di accesso=20
+=E8 indicato dal prompt, che in questo caso sar=E0 del tipo:<BR>
+<P class=3DDOS>Router&gt;</P>Per accedere al livello di configurazione =
+bisogna=20
+utilizzare il comando<FONT color=3D#ff0000><I> enable</I></FONT>, che =
+richieder=E0=20
+la password (che potr=E0 essere settata successivamente con il comando =
+<I><FONT=20
+color=3D#ff0000>enable secret</FONT></I>). Completata la procedura di =
+Login il=20
+prompt =E8 cambiato, sar=E0 infatti det tipo:<BR>
+<P class=3DDOS>Router#</P>Per disattivare la modalit=E0 di =
+configurazione digitare=20
+<FONT color=3D#ff0000><I>disable</I></FONT>, che uscir=E0 cos=EC dal =
+livello=20
+privilegiato e ritorner=E0 in modalit=E0 utente.<BR><BR><U>N.B. Per =
+effettuare il=20
+logout utilizzare il comando exit (da aggiungere immagine del prompt di=20
+login).</U><BR><BR><B>&nbsp;La lista dei comandi</B><BR><BR>Al prompt =
+dei=20
+comandi digitare "<I><FONT color=3D#ff0000>?</FONT></I>": in qualsiasi =
+modalit=E0=20
+avremo come risposta la lista completa di tutti i comandi:=20
+<P><I>Comandi del prompt <B>utente</B></I></P>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D894 border=3D0>
+  <COLGROUP>
+  <COL style=3D"WIDTH: 83pt; mso-width-source: userset; mso-width-alt: =
+4022"=20
+  width=3D110>
+  <COL style=3D"WIDTH: 263pt; mso-width-source: userset; mso-width-alt: =
+12800"=20
+  width=3D350>
+  <TBODY>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>&lt;1-99&gt;</TD>
+    <TD class=3DDOS width=3D656>Session number to resume</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>access-enable</TD>
+    <TD class=3DDOS width=3D656>Create a temporary Access-List =
+entry</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>clear</TD>
+    <TD class=3DDOS width=3D656>Reset functions</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>connect</TD>
+    <TD class=3DDOS width=3D656>Open a terminal connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>disable</TD>
+    <TD class=3DDOS width=3D656>Turn off privileged commands</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>disconnect</TD>
+    <TD class=3DDOS width=3D656>Disconnect an existing network =
+connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>enable</TD>
+    <TD class=3DDOS width=3D656>Turn on privileged commands</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>exit</TD>
+    <TD class=3DDOS width=3D656>Exit from the EXEC</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>help</TD>
+    <TD class=3DDOS width=3D656>Description of the interactive help =
+system</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>lock</TD>
+    <TD class=3DDOS width=3D656>Lock the terminal</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>login</TD>
+    <TD class=3DDOS width=3D656>Log in as a particular user</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>logout</TD>
+    <TD class=3DDOS width=3D656>Exit from the EXEC</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>mrinfo</TD>
+    <TD class=3DDOS width=3D656>Request neighbor and version information =
+from a=20
+      multicast router</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>mstat</TD>
+    <TD class=3DDOS width=3D656>Show statistics after multiple multicast =
+
+      traceroutes</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>mtrace</TD>
+    <TD class=3DDOS width=3D656>Trace reverse multicast path from =
+destination to=20
+      source</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224=20
+    height=3D17>name-connection</TD>
+    <TD class=3DDOS width=3D656>Name an existing network =
+connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>pad</TD>
+    <TD class=3DDOS width=3D656>Open a X.29 PAD connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>ping</TD>
+    <TD class=3DDOS width=3D656>Send echo messages</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>ppp</TD>
+    <TD class=3DDOS width=3D656>Start IETF Point-to-Point Protocol =
+(PPP)</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>resume</TD>
+    <TD class=3DDOS width=3D656>Resume an active network =
+connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>rlogin</TD>
+    <TD class=3DDOS width=3D656>Open an rlogin connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>show</TD>
+    <TD class=3DDOS width=3D656>Show running system =
+information</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>slip</TD>
+    <TD class=3DDOS width=3D656>Start Serial-line IP (SLIP)</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>systat</TD>
+    <TD class=3DDOS width=3D656>Display information about terminal =
+lines</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>telnet</TD>
+    <TD class=3DDOS width=3D656>Open a telnet connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>terminal</TD>
+    <TD class=3DDOS width=3D656>Set terminal line parameters</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>traceroute</TD>
+    <TD class=3DDOS width=3D656>Trace route to destination</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>tunnel</TD>
+    <TD class=3DDOS width=3D656>Open a tunnel connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>where</TD>
+    <TD class=3DDOS width=3D656>List active connections</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D224 =
+height=3D17>x3</TD>
+    <TD class=3DDOS width=3D656>Set X.3 parameters on =
+PAD</TD></TR></TBODY></TABLE>
+<P><I>Comandi prompt <B>privilegiato</B></I></P>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D893 border=3D0>
+  <COLGROUP>
+  <COL style=3D"WIDTH: 80pt; mso-width-source: userset; mso-width-alt: =
+3913"=20
+  width=3D107>
+  <COL style=3D"WIDTH: 292pt; mso-width-source: userset; mso-width-alt: =
+14226"=20
+  width=3D389>
+  <TBODY>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>&lt;1-99&gt;</TD>
+    <TD class=3DDOS width=3D656>Session number to resume</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>access-enable</TD>
+    <TD class=3DDOS width=3D656>Create a temporary Access-List =
+entry</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223=20
+    height=3D17>access-template</TD>
+    <TD class=3DDOS width=3D656>Create a temporary Access-List =
+entry</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>bfe</TD>
+    <TD class=3DDOS width=3D656>For manual emergency modes =
+setting</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>clear</TD>
+    <TD class=3DDOS width=3D656>Reset functions</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>clock</TD>
+    <TD class=3DDOS width=3D656>Manage the system clock</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>configure</TD>
+    <TD class=3DDOS width=3D656>Enter configuration mode</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>connect</TD>
+    <TD class=3DDOS width=3D656>Open a terminal connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>copy</TD>
+    <TD class=3DDOS width=3D656>Copy configuration or image =
+data</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>debug</TD>
+    <TD class=3DDOS width=3D656>Debugging functions (see also =
+'undebug')</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>disable</TD>
+    <TD class=3DDOS width=3D656>Turn off privileged commands</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>disconnect</TD>
+    <TD class=3DDOS width=3D656>Disconnect an existing network =
+connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>enable</TD>
+    <TD class=3DDOS width=3D656>Turn on privileged commands</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>erase</TD>
+    <TD class=3DDOS width=3D656>Erase flash or configuration =
+memory</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>exit</TD>
+    <TD class=3DDOS width=3D656>Exit from the EXEC</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>help</TD>
+    <TD class=3DDOS width=3D656>Description of the interactive help =
+system</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>lock</TD>
+    <TD class=3DDOS width=3D656>Lock the terminal</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>login</TD>
+    <TD class=3DDOS width=3D656>Log in as a particular user</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>logout</TD>
+    <TD class=3DDOS width=3D656>Exit from the EXEC</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>mbranch</TD>
+    <TD class=3DDOS width=3D656>Trace multicast route down tree =
+branch</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>mrbranch</TD>
+    <TD class=3DDOS width=3D656>Trace reverse multicast route up tree =
+branch</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>mrinfo</TD>
+    <TD class=3DDOS width=3D656>Request neighbor and version information =
+from a=20
+      multicast router</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>mstat</TD>
+    <TD class=3DDOS width=3D656>Show statistics after multiple multicast =
+
+      traceroutes</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>mtrace</TD>
+    <TD class=3DDOS width=3D656>Trace reverse multicast path from =
+destination to=20
+      source</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223=20
+    height=3D17>name-connection</TD>
+    <TD class=3DDOS width=3D656>Name an existing network =
+connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>no</TD>
+    <TD class=3DDOS width=3D656>Disable debugging functions</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>pad</TD>
+    <TD class=3DDOS width=3D656>Open a X.29 PAD connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>ping</TD>
+    <TD class=3DDOS width=3D656>Send echo messages</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>ppp</TD>
+    <TD class=3DDOS width=3D656>Start IETF Point-to-Point Protocol =
+(PPP)</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>reload</TD>
+    <TD class=3DDOS width=3D656>Halt and perform a cold =
+restart</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>resume</TD>
+    <TD class=3DDOS width=3D656>Resume an active network =
+connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>rlogin</TD>
+    <TD class=3DDOS width=3D656>Open an rlogin connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>rsh</TD>
+    <TD class=3DDOS width=3D656>Execute a remote command</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>send</TD>
+    <TD class=3DDOS width=3D656>Send a message to other tty =
+lines</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>setup</TD>
+    <TD class=3DDOS width=3D656>Run the SETUP command facility</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>show</TD>
+    <TD class=3DDOS width=3D656>Show running system =
+information</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>slip</TD>
+    <TD class=3DDOS width=3D656>Start Serial-line IP (SLIP)</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>start-chat</TD>
+    <TD class=3DDOS width=3D656>Start a chat-script on a line</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>systat</TD>
+    <TD class=3DDOS width=3D656>Display information about terminal =
+lines</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>telnet</TD>
+    <TD class=3DDOS width=3D656>Open a telnet connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>terminal</TD>
+    <TD class=3DDOS width=3D656>Set terminal line parameters</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>test</TD>
+    <TD class=3DDOS width=3D656>Test subsystems, memory, and =
+interfaces</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>traceroute</TD>
+    <TD class=3DDOS width=3D656>Trace route to destination</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>tunnel</TD>
+    <TD class=3DDOS width=3D656>Open a tunnel connection</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>undebug</TD>
+    <TD class=3DDOS width=3D656>Disable debugging functions (see also=20
+  'debug')</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>verify</TD>
+    <TD class=3DDOS width=3D656>Verify checksum of a Flash =
+file</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>where</TD>
+    <TD class=3DDOS width=3D656>List active connections</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>write</TD>
+    <TD class=3DDOS width=3D656>Write running configuration to memory, =
+network, or=20
+      terminal</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D223 =
+height=3D17>x3</TD>
+    <TD class=3DDOS width=3D656>Set X.3 parameters on =
+PAD</TD></TR></TBODY></TABLE>
+<P><BR><B>La funzione di help&nbsp;<BR></B><BR>Per controllare la =
+sintassi di un=20
+qualsiasi comando si utilizza la potente funzione di help del sistema =
+operativo=20
+IOS della Cisco:<BR><BR>ad esempio se dovessimo settare la data del =
+Router=20
+possiamo digitare "<FONT color=3D#ff0000><I>c?</I></FONT>" che =
+restituisce la=20
+lista di tutti i comandi che cominciano appunto per c. Individuato =
+adesso il=20
+comando da utilizzare (<I><FONT color=3D#ff0000>clock</FONT></I>) =
+dobbiamo=20
+conoscerne la sintassi, per fare ci=F2 utilizzaremo ancora il "?" =
+secondo questo=20
+modello:<BR></P>
+<P class=3DDOS>comando ?&nbsp;</P>oppure se il comando ha =
+parametri&nbsp;<BR>
+<P class=3DDOS>comando [lista parametri] ?</P>Il router risponder=E0 =
+inviando la=20
+lista dei possibili valori del parametro sconosciuto o quello che =
+significano e=20
+il formato di inserimento. <BR><BR><U>N.B. Il carattere "<FONT=20
+color=3D#ff0000><I>^</I></FONT>" indica un errore di=20
+sintassi.&nbsp;</U><BR><BR><B>La cronologia dei comandi dell' =
+IOS</B><BR><BR>In=20
+modo completamente autonomo il Router tiene traccia in un buffer, detto =
+"<FONT=20
+color=3D#ff0000><I>command history</I></FONT>", degli ultimi 10 comandi =
+digitati.=20
+La capacit=E0 del Buffer =E8 dimensionabile dall'utente fino ad un =
+massimo di 256=20
+righe tramite il comando "<FONT color=3D#ff0000><I>history =
+size</I></FONT>" o=20
+"<I><FONT color=3D#ff0000>terminal history size</FONT></I>" se si opera =
+da un=20
+terminale.<BR><BR>
+<TABLE cellSpacing=3D0 cellPadding=3D0 width=3D893 border=3D0>
+  <COLGROUP>
+  <COL style=3D"WIDTH: 83pt; mso-width-source: userset; mso-width-alt: =
+4022"=20
+  width=3D110>
+  <COL style=3D"WIDTH: 80pt; mso-width-source: userset; mso-width-alt: =
+3913"=20
+  width=3D107>
+  <TBODY>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D346 =
+height=3D17>Ctrl-P o up=20
+      arrow key</TD>
+    <TD class=3DDOS width=3D533>Recalls last (previous) =
+command</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D346 =
+height=3D17>Ctrl-N o down=20
+      arrow key</TD>
+    <TD class=3DDOS width=3D533>Recalls most recent command</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D346 =
+height=3D17>Router&gt; show=20
+      history</TD>
+    <TD class=3DDOS width=3D533>Shows command buffer</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D346 =
+height=3D17>Router&gt;=20
+      terminal history size numbers of lines</TD>
+    <TD class=3DDOS width=3D533>Sets command buffer size</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D346 =
+height=3D17>Router&gt; no=20
+      terminal editing</TD>
+    <TD class=3DDOS width=3D533>Disables advanved editing =
+features</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D346 =
+height=3D17>terminal=20
+    editing</TD>
+    <TD class=3DDOS width=3D533>Re-enables advaced editing</TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt" width=3D346 =
+height=3D17>&lt;tab&gt;</TD>
+    <TD class=3DDOS width=3D533>Completes the=20
+entry</TD></TR></TBODY></TABLE></BODY></HTML>

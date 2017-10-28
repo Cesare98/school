@@ -1,0 +1,33 @@
+Router_Las1>?
+Exec commands:
+  <1-99>           Session number to resume
+  access-enable    Create a temporary Access-List entry
+  clear            Reset functions
+  connect          Open a terminal connection
+  disable          Turn off privileged commands
+  disconnect       Disconnect an existing network connection
+  enable           Turn on privileged commands
+  exit             Exit from the EXEC
+  help             Description of the interactive help system
+  lock             Lock the terminal
+  login            Log in as a particular user
+  logout           Exit from the EXEC
+  mrinfo           Request neighbor and version information from a multicast
+                   router
+  mstat            Show statistics after multiple multicast traceroutes
+  mtrace           Trace reverse multicast path from destination to source
+  name-connection  Name an existing network connection
+  pad              Open a X.29 PAD connection
+  ping             Send echo messages
+  ppp              Start IETF Point-to-Point Protocol (PPP)
+  resume           Resume an active network connection    
+  rlogin           Open an rlogin connection
+  show             Show running system information
+  slip             Start Serial-line IP (SLIP)
+  systat           Display information about terminal lines
+  telnet           Open a telnet connection
+  terminal         Set terminal line parameters
+  traceroute       Trace route to destination
+  tunnel           Open a tunnel connection
+  where            List active connections
+  x3               Set X.3 parameters on PAD   

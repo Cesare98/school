@@ -1,0 +1,6 @@
+FILE QUARANTINED
+----------------
+
+Microsoft Antigen for SMTP removed a file since it was found to match a filter.
+File name: "TFTPServer1-1-980730.exe"
+Filter name: "FILE FILTER= Natale: *.exe"

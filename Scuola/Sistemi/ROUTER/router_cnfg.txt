@@ -1,0 +1,5 @@
+Router(config)#int
+Router(config)#interface fast
+Router(config)#interface fastEthernet 0/0 
+Router(config-if)#ip address 1.1.1.1 255.255.255.0
+Router(config-if)#no shut

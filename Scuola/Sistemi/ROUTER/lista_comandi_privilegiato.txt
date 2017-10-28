@@ -1,0 +1,49 @@
+  <1-99>           Session number to resume
+  access-enable    Create a temporary Access-List entry
+  access-template  Create a temporary Access-List entry
+  bfe              For manual emergency modes setting
+  clear            Reset functions
+  clock            Manage the system clock
+  configure        Enter configuration mode
+  connect          Open a terminal connection
+  copy             Copy configuration or image data
+  debug            Debugging functions (see also 'undebug')
+  disable          Turn off privileged commands
+  disconnect       Disconnect an existing network connection
+  enable           Turn on privileged commands
+  erase            Erase flash or configuration memory
+  exit             Exit from the EXEC
+  help             Description of the interactive help system
+  lock             Lock the terminal
+  login            Log in as a particular user
+  logout           Exit from the EXEC
+  mbranch          Trace multicast route down tree branch
+  mrbranch         Trace reverse multicast route up tree branch    
+  mrinfo           Request neighbor and version information from a multicast router
+  mstat            Show statistics after multiple multicast traceroutes
+  mtrace           Trace reverse multicast path from destination to source
+  name-connection  Name an existing network connection
+  no               Disable debugging functions
+  pad              Open a X.29 PAD connection
+  ping             Send echo messages
+  ppp              Start IETF Point-to-Point Protocol (PPP)
+  reload           Halt and perform a cold restart
+  resume           Resume an active network connection
+  rlogin           Open an rlogin connection
+  rsh              Execute a remote command
+  send             Send a message to other tty lines
+  setup            Run the SETUP command facility
+  show             Show running system information
+  slip             Start Serial-line IP (SLIP)
+  start-chat       Start a chat-script on a line
+  systat           Display information about terminal lines
+  telnet           Open a telnet connection
+  terminal         Set terminal line parameters
+  test             Test subsystems, memory, and interfaces
+  traceroute       Trace route to destination   
+  tunnel           Open a tunnel connection
+  undebug          Disable debugging functions (see also 'debug')
+  verify           Verify checksum of a Flash file
+  where            List active connections
+  write            Write running configuration to memory, network, or terminal
+  x3               Set X.3 parameters on PAD        

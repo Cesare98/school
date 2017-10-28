@@ -82,8 +82,16 @@ public class Client implements Runnable
 	}
 	finally
 	{
-	    listener = null;
-	    toServer.close();
+	    try
+	    {
+		toServer.close();
+		fromServer.close();
+		listener = null;
+	    }
+	    catch (IOException ex)
+	    {
+		Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+	    }
 	}
     }
 
@@ -117,9 +125,12 @@ public class Client implements Runnable
 	{
 	    while (true)
 	    {
-		toServer.println(username);
 		message = fromKeyboard.readLine();
-		toServer.println(message);
+		if (message != null && username != null)
+		{
+		    toServer.println(username);
+		    toServer.println(message);
+		}
 
 	    }
 	}
@@ -129,7 +140,18 @@ public class Client implements Runnable
 	}
 	finally
 	{
-	    toServer.close();
+	    try
+	    {
+		username = null;
+		fromServer.close();
+		toServer.close();
+		fromKeyboard.close();
+		mySocket.close();
+	    }
+	    catch (IOException ex)
+	    {
+		Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+	    }
 	}
     }
 }

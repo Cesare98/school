@@ -1,0 +1,7 @@
+CHAT TCP
+
+Il progetto è composto da due parti, la parte client e quella server.
+La parte server gestiste la registrazione del client e le varie chat;
+il server viene sostenuto da una inner class che gestisce la connessione,
+questa classe controlla se l'utente sta chattando e tiene record della classe.
+Il client si occupa solo di inviare e ricevere i messaggi tramirte due thread separati.

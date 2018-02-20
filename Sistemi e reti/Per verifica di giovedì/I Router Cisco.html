@@ -1,0 +1,71 @@
+
+<!-- saved from url=(0042)http://192.168.8.252/RouterCisco/Index.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="it">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<title>I Router Cisco</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">I Router Cisco</font></b></p>
+
+<p align="center"><font size="4"><b><a href="http://192.168.8.252/RouterCisco/Index.htm">l'hardware</a>,
+<a href="http://192.168.8.252/RouterCisco/la_prima_configurazione.htm">introduzione all'IOS</a>,
+<a href="http://192.168.8.252/RouterCisco/la_seconda_configurazione.htm">le modalità</a>,
+<a href="http://192.168.8.252/RouterCisco/la_configurazione_delle_interfacce.htm">l'ethernet</a>,
+<a href="http://192.168.8.252/RouterCisco/colleghiamo_tra_loro_due_router.htm">la seriale</a>,
+<a href="http://192.168.8.252/RouterCisco/routing_statico.htm">il routing statico</a></b></font></p>
+<p>Si intende fornire una descrizione dell'hardware, delle funzionalità e dei 
+comandi principali per la configurazione del funzionamento del router Cisco.</p>
+<p align="center"> INTRODUZIONE</p>
+<p>Il router è un dispositivo hardware che lavora al 3° strato del 
+  modello OSI, ossia nel network layer. Esso è in grado di instradare i 
+  datagrammi IP verso l'host di destinazione, scegliendo il percorso migliore, 
+  la velocità più elevata o la rete più affidabile da utilizzare 
+  come prossimo salto. Il router è in grado di collegare assieme più 
+  reti fisiche e per tale motivo sta alla base del funzionamento dell'intera internet. 
+  In ogni router è presente una tabella di instradamento composta dagli indirizzi 
+  delle reti conosciute, nel processo di instradamento la scelta del prossimo 
+router a cui inviare il datagramma IP sarà in funzione delle infirmazioni 
+contenute in tale tabella..</p>
+<p align="center"> IL PROTOCOLLO IP </p>
+<p align="left">Lo standard TCP/IP definisce un indirizzamento degli host di tipo 
+  gerarchico per favorire il processo di instradamento. Un indirizzo IP definisce 
+  una connessione virtuale ad una rete fisica da parte di un router o di un host 
+  ed è asseganto direttamente dall'amministratore della rete o per mezzo 
+  di un server DHCP. Il protocollo IP definito attraverso la RFC791 viene utilizzato 
+  nello strato di interrete del modello di riferimento di internet. </p>
+<p align="center"> HARDWARE</p>
+<p align="left">Il router <b>Cisco 2503</b> è un computer dedicato con Cpu Motorola 68030, memoria 
+NVRAM dove conservare sistema operativo e tabelle di configurazione, memoria RAM 
+dove vengono copiate le configurazioni e dove alloggiano i buffer per i dati in 
+transito, le interfacce ai diversi protocolli e i connettori per le periferiche.</p><p align="left">
+<img border="0" src="./SchedaMadre.jpg" width="690" height="424">
+
+
+
+</p><p align="left">Sulla sinistra un transceiver che converte 
+il segnale ethernet dal connettore AUI DB15 al connettore RJ45, sul pannello le 
+porte Serial 0 (S0 di tipo DCE) che trasportano i segnali secondo lo standard 
+V35 (anche se con connettore a 60 poli di tipo proprietario) e la porta Serial 1 ( S1 di 
+tipo DTE ) , la presa RJ45&nbsp; BRI per la linea ISDN, la presa RJ45 su cui 
+escono i segnali RS232 per la console, la presa AUX di tipo RJ45 su cui si 
+connette un modem attraverso il quale si può configurare il router.</p><p align="left">
+<img border="0" src="./connettori.JPG" width="797" height="392"></p><p align="left">Le prossime pagine :
+<a href="http://192.168.8.252/RouterCisco/la_prima_configurazione.htm">La prima configurazione</a>,
+<a href="http://192.168.8.252/RouterCisco/router_caste1.htm">I due livelli di accesso</a>,
+<a href="http://192.168.8.252/RouterCisco/lista_comandi_utente.txt">Lista dei comandi in modo utente</a>,
+<a href="http://192.168.8.252/RouterCisco/lista_comandi_privilegiato.txt">Lista dei comandi in modo privilegiato</a>.</p>
+
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+</body></html>

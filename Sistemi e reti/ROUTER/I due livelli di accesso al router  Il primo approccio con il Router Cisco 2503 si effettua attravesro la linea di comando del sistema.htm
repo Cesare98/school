@@ -1,0 +1,380 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://192.168.63.252/routercisco/router_caste1.htm -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<META name="GENERATOR" content="MSHTML 11.00.9600.16476"> 
+<META name="ProgId" content="FrontPage.Editor.Document"> <TITLE>I due livelli di 
+accesso al router&nbsp; Il primo approccio con il Router Cisco 2503 si effettua 
+attravesro la linea di comando del sistema</TITLE> 
+<STYLE>
+<!--
+.DOS         { font-family: Courier New; color: #FFFFFF; font-weight: bold; 
+               background-color: #000000 }
+-->
+</STYLE>
+ </HEAD> 
+<BODY>
+<P><B>I due livelli di accesso al router</B><BR><BR>Il primo approccio con il 
+<B> Router Cisco 2503</B> si effettua attravesro la linea di comando del sistema 
+operativo <B> Cisco IOS</B>.<BR>Il sistema operativo da la modalità di accesso a 
+diversi livelli: 
+<UL>
+  <LI>Il livello <B> utente</B> : include servizi riguardanti il controllo del 
+  funzionamento del router (con questa modalità di accesso le modifiche alla 
+  configurazione non verranno accettate).</LI>
+  <LI>Il livello <B> privilegiato</B> : include servizi riguardanti la 
+  configurazione "avanzata" del router.</LI></UL>La prima volta che si accederà al 
+router si accederà in modalità utente, se osservate bene il metodo di accesso è 
+indicato dal prompt, che in questo caso sarà del tipo:<BR>
+<P class="DOS">Router&gt;</P>Per accedere al livello di configurazione bisogna 
+utilizzare il comando<FONT color="#ff0000"><I>enable</I></FONT>, che richiederà 
+la password (che potrà essere settata successivamente con il comando <I><FONT 
+color="#ff0000"> enable secret</FONT></I>). Completata la procedura di Login il 
+prompt è cambiato, sarà infatti det tipo:<BR>
+<P class="DOS">Router#</P>Per disattivare la modalità di configurazione digitare 
+<FONT color="#ff0000"><I>disable</I></FONT>, che uscirà così dal livello 
+privilegiato e ritornerà in modalità utente.<BR><BR><U>N.B. Per effettuare il 
+logout utilizzare il comando exit (da aggiungere immagine del prompt di 
+login).</U><BR><BR><B>&nbsp;La lista dei comandi</B><BR><BR>Al prompt dei 
+comandi digitare "<I><FONT color="#ff0000">?</FONT></I>": in qualsiasi modalità 
+avremo come risposta la lista completa di tutti i comandi: 
+<P><I>Comandi del prompt <B> utente</B></I></P>
+<TABLE width="894" border="0" cellspacing="0" cellpadding="0">
+  <COLGROUP>
+  <COL width="110" style="width: 83pt; mso-width-source: userset; mso-width-alt: 4022;">
+  <COL width="350" style="width: 263pt; mso-width-source: userset; mso-width-alt: 12800;">
+  <TBODY>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" 
+    style="height: 12.75pt;">&lt;1-99&gt;</TD>
+    <TD width="656" class="DOS">Session number to resume</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" 
+      style="height: 12.75pt;">access-enable</TD>
+    <TD width="656" class="DOS">Create a temporary Access-List entry</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">clear</TD>
+    <TD width="656" class="DOS">Reset functions</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" 
+style="height: 12.75pt;">connect</TD>
+    <TD width="656" class="DOS">Open a terminal connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" 
+style="height: 12.75pt;">disable</TD>
+    <TD width="656" class="DOS">Turn off privileged commands</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" 
+    style="height: 12.75pt;">disconnect</TD>
+    <TD width="656" class="DOS">Disconnect an existing network 
+connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">enable</TD>
+    <TD width="656" class="DOS">Turn on privileged commands</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">exit</TD>
+    <TD width="656" class="DOS">Exit from the EXEC</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">help</TD>
+    <TD width="656" class="DOS">Description of the interactive help 
+  system</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">lock</TD>
+    <TD width="656" class="DOS">Lock the terminal</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">login</TD>
+    <TD width="656" class="DOS">Log in as a particular user</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">logout</TD>
+    <TD width="656" class="DOS">Exit from the EXEC</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">mrinfo</TD>
+    <TD width="656" class="DOS">Request neighbor and version information from 
+      a multicast router</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">mstat</TD>
+    <TD width="656" class="DOS">Show statistics after multiple multicast 
+      traceroutes</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">mtrace</TD>
+    <TD width="656" class="DOS">Trace reverse multicast path from destination 
+      to source</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" 
+      style="height: 12.75pt;">name-connection</TD>
+    <TD width="656" class="DOS">Name an existing network connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">pad</TD>
+    <TD width="656" class="DOS">Open a X.29 PAD connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">ping</TD>
+    <TD width="656" class="DOS">Send echo messages</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">ppp</TD>
+    <TD width="656" class="DOS">Start IETF Point-to-Point Protocol (PPP)</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">resume</TD>
+    <TD width="656" class="DOS">Resume an active network connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">rlogin</TD>
+    <TD width="656" class="DOS">Open an rlogin connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">show</TD>
+    <TD width="656" class="DOS">Show running system information</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">slip</TD>
+    <TD width="656" class="DOS">Start Serial-line IP (SLIP)</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">systat</TD>
+    <TD width="656" class="DOS">Display information about terminal lines</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">telnet</TD>
+    <TD width="656" class="DOS">Open a telnet connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" 
+    style="height: 12.75pt;">terminal</TD>
+    <TD width="656" class="DOS">Set terminal line parameters</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" 
+    style="height: 12.75pt;">traceroute</TD>
+    <TD width="656" class="DOS">Trace route to destination</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">tunnel</TD>
+    <TD width="656" class="DOS">Open a tunnel connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">where</TD>
+    <TD width="656" class="DOS">List active connections</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="224" height="17" class="DOS" style="height: 12.75pt;">x3</TD>
+    <TD width="656" class="DOS">Set X.3 parameters on PAD</TD></TR></TBODY></TABLE>
+<P><I>Comandi prompt <B> privilegiato</B></I></P>
+<TABLE width="893" border="0" cellspacing="0" cellpadding="0">
+  <COLGROUP>
+  <COL width="107" style="width: 80pt; mso-width-source: userset; mso-width-alt: 3913;">
+  <COL width="389" style="width: 292pt; mso-width-source: userset; mso-width-alt: 14226;">
+  <TBODY>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+    style="height: 12.75pt;">&lt;1-99&gt;</TD>
+    <TD width="656" class="DOS">Session number to resume</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+      style="height: 12.75pt;">access-enable</TD>
+    <TD width="656" class="DOS">Create a temporary Access-List entry</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+      style="height: 12.75pt;">access-template</TD>
+    <TD width="656" class="DOS">Create a temporary Access-List entry</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">bfe</TD>
+    <TD width="656" class="DOS">For manual emergency modes setting</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">clear</TD>
+    <TD width="656" class="DOS">Reset functions</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">clock</TD>
+    <TD width="656" class="DOS">Manage the system clock</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+    style="height: 12.75pt;">configure</TD>
+    <TD width="656" class="DOS">Enter configuration mode</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+style="height: 12.75pt;">connect</TD>
+    <TD width="656" class="DOS">Open a terminal connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">copy</TD>
+    <TD width="656" class="DOS">Copy configuration or image data</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">debug</TD>
+    <TD width="656" class="DOS">Debugging functions (see also 'undebug')</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+style="height: 12.75pt;">disable</TD>
+    <TD width="656" class="DOS">Turn off privileged commands</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+    style="height: 12.75pt;">disconnect</TD>
+    <TD width="656" class="DOS">Disconnect an existing network 
+connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">enable</TD>
+    <TD width="656" class="DOS">Turn on privileged commands</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">erase</TD>
+    <TD width="656" class="DOS">Erase flash or configuration memory</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">exit</TD>
+    <TD width="656" class="DOS">Exit from the EXEC</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">help</TD>
+    <TD width="656" class="DOS">Description of the interactive help 
+  system</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">lock</TD>
+    <TD width="656" class="DOS">Lock the terminal</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">login</TD>
+    <TD width="656" class="DOS">Log in as a particular user</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">logout</TD>
+    <TD width="656" class="DOS">Exit from the EXEC</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+style="height: 12.75pt;">mbranch</TD>
+    <TD width="656" class="DOS">Trace multicast route down tree branch</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+    style="height: 12.75pt;">mrbranch</TD>
+    <TD width="656" class="DOS">Trace reverse multicast route up tree 
+  branch</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">mrinfo</TD>
+    <TD width="656" class="DOS">Request neighbor and version information from 
+      a multicast router</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">mstat</TD>
+    <TD width="656" class="DOS">Show statistics after multiple multicast 
+      traceroutes</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">mtrace</TD>
+    <TD width="656" class="DOS">Trace reverse multicast path from destination 
+      to source</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+      style="height: 12.75pt;">name-connection</TD>
+    <TD width="656" class="DOS">Name an existing network connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">no</TD>
+    <TD width="656" class="DOS">Disable debugging functions</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">pad</TD>
+    <TD width="656" class="DOS">Open a X.29 PAD connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">ping</TD>
+    <TD width="656" class="DOS">Send echo messages</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">ppp</TD>
+    <TD width="656" class="DOS">Start IETF Point-to-Point Protocol (PPP)</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">reload</TD>
+    <TD width="656" class="DOS">Halt and perform a cold restart</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">resume</TD>
+    <TD width="656" class="DOS">Resume an active network connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">rlogin</TD>
+    <TD width="656" class="DOS">Open an rlogin connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">rsh</TD>
+    <TD width="656" class="DOS">Execute a remote command</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">send</TD>
+    <TD width="656" class="DOS">Send a message to other tty lines</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">setup</TD>
+    <TD width="656" class="DOS">Run the SETUP command facility</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">show</TD>
+    <TD width="656" class="DOS">Show running system information</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">slip</TD>
+    <TD width="656" class="DOS">Start Serial-line IP (SLIP)</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+    style="height: 12.75pt;">start-chat</TD>
+    <TD width="656" class="DOS">Start a chat-script on a line</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">systat</TD>
+    <TD width="656" class="DOS">Display information about terminal lines</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">telnet</TD>
+    <TD width="656" class="DOS">Open a telnet connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+    style="height: 12.75pt;">terminal</TD>
+    <TD width="656" class="DOS">Set terminal line parameters</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">test</TD>
+    <TD width="656" class="DOS">Test subsystems, memory, and interfaces</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+    style="height: 12.75pt;">traceroute</TD>
+    <TD width="656" class="DOS">Trace route to destination</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">tunnel</TD>
+    <TD width="656" class="DOS">Open a tunnel connection</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" 
+style="height: 12.75pt;">undebug</TD>
+    <TD width="656" class="DOS">Disable debugging functions (see also 
+    'debug')</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">verify</TD>
+    <TD width="656" class="DOS">Verify checksum of a Flash file</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">where</TD>
+    <TD width="656" class="DOS">List active connections</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">write</TD>
+    <TD width="656" class="DOS">Write running configuration to memory, 
+      network, or terminal</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="223" height="17" class="DOS" style="height: 12.75pt;">x3</TD>
+    <TD width="656" class="DOS">Set X.3 parameters on PAD</TD></TR></TBODY></TABLE>
+<P><BR><B>La funzione di help&nbsp;<BR></B> <BR>Per controllare la sintassi di 
+un qualsiasi comando si utilizza la potente funzione di help del sistema 
+operativo IOS della Cisco:<BR><BR>ad esempio se dovessimo settare la data del 
+Router possiamo digitare "<FONT color="#ff0000"><I>c?</I></FONT>" che 
+restituisce la  lista di tutti i comandi che cominciano appunto per c. 
+Individuato adesso il comando da utilizzare (<I><FONT 
+color="#ff0000">clock</FONT></I>) dobbiamo conoscerne la sintassi, per fare ciò 
+utilizzaremo ancora il "?" secondo questo modello:<BR></P>
+<P class="DOS">comando ?&nbsp;</P>oppure se il comando ha parametri&nbsp;<BR>
+<P class="DOS">comando [lista parametri] ?</P>Il router risponderà inviando la 
+lista dei possibili valori del parametro sconosciuto o quello che significano e 
+il formato di inserimento. <BR><BR><U>N.B. Il carattere "<FONT 
+color="#ff0000"><I>^</I></FONT>" indica un errore di 
+sintassi.&nbsp;</U><BR><BR><B>La cronologia dei comandi dell' IOS</B><BR><BR>In 
+modo completamente autonomo il Router tiene traccia in un buffer, detto "<FONT 
+color="#ff0000"><I>command history</I></FONT>", degli ultimi 10 comandi 
+digitati. La capacità del Buffer è dimensionabile dall'utente fino ad un massimo 
+di 256 righe tramite il comando "<FONT color="#ff0000"><I>history 
+size</I></FONT>" o "<I><FONT color="#ff0000">terminal history size</FONT></I>" 
+se si opera da  un terminale.<BR><BR>
+<TABLE width="893" border="0" cellspacing="0" cellpadding="0">
+  <COLGROUP>
+  <COL width="110" style="width: 83pt; mso-width-source: userset; mso-width-alt: 4022;">
+  <COL width="107" style="width: 80pt; mso-width-source: userset; mso-width-alt: 3913;">
+  <TBODY>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="346" height="17" class="DOS" style="height: 12.75pt;">Ctrl-P o 
+      up      arrow key</TD>
+    <TD width="533" class="DOS">Recalls last (previous) command</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="346" height="17" class="DOS" style="height: 12.75pt;">Ctrl-N o  
+          down arrow key</TD>
+    <TD width="533" class="DOS">Recalls most recent command</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="346" height="17" class="DOS" 
+      style="height: 12.75pt;">Router&gt;      show history</TD>
+    <TD width="533" class="DOS">Shows command buffer</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="346" height="17" class="DOS" 
+      style="height: 12.75pt;">Router&gt;      terminal history size numbers of 
+      lines</TD>
+    <TD width="533" class="DOS">Sets command buffer size</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="346" height="17" class="DOS" 
+      style="height: 12.75pt;">Router&gt;      no terminal editing</TD>
+    <TD width="533" class="DOS">Disables advanved editing features</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="346" height="17" class="DOS" style="height: 12.75pt;">terminal  
+          editing</TD>
+    <TD width="533" class="DOS">Re-enables advaced editing</TD></TR>
+  <TR height="17" style="height: 12.75pt;">
+    <TD width="346" height="17" class="DOS" 
+    style="height: 12.75pt;">&lt;tab&gt;</TD>
+    <TD width="533" class="DOS">Completes the 
+entry</TD></TR></TBODY></TABLE></BODY></HTML>

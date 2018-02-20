@@ -1,0 +1,288 @@
+From: <Salvato da Windows Internet Explorer 7>
+Subject: La prima configurazione
+Date: Thu, 2 Oct 2008 11:52:15 +0200
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://192.168.63.252/RouterCisco/la_prima_configurazione.htm
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3350
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>La prima configurazione</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.6000.16705" name=3DGENERATOR>
+<META content=3DFrontPage.Editor.Document name=3DProgId>
+<STYLE>.DOS {
+	FONT-SIZE: 15px; COLOR: #ffffff; FONT-FAMILY: MS Sans Serif; =
+BACKGROUND-COLOR: #000000
+}
+</STYLE>
+</HEAD>
+<BODY><B>La prima configurazione:</B><BR><BR>Quando si accende il router =
+il=20
+sistema operativo e i file di configurazione vengono copiati dalla NVRAM =
+alla=20
+RAM.<BR>Se l' OS non =E8 presente nella NVRAM il router interroga ogni =
+periferica=20
+con comunicazione a pacchetto finoa trovare un router che gli spedisca =
+il=20
+sistema operativo via network; la richiesta viene effettuara mediante =
+una=20
+interrogazione Brodcast e la trasmissione avviene mediante TFTP.
+<P>Adesso il router non ha nessuna configuraizone Ethernet. L'unico modo =
+di=20
+accedere al router =E8 tramite <FONT color=3D#ff0000>console</FONT>, si =
+collega il=20
+router con cavo rollover e, all'altro capo si usa un adattatore da RJ45 =
+a porta=20
+COM. A questo punto si apre una connessione con un programma terminale =
+alla=20
+seriale RS232 a cui =E8 collegato il router con impostazioni 9600,n,8,1. =
+
+ALimentiamo il router e in pochi secondi vengono trasmessi i messaggi=20
+seguenti.</P>
+<TABLE id=3DAutoNumber1 style=3D"BORDER-COLLAPSE: collapse" =
+borderColor=3D#111111=20
+cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D1>
+  <TBODY>
+  <TR>
+    <TD width=3D"100%"><FONT face=3DCourier><BR>System Bootstrap, =
+Version=20
+      11.0(10c), SOFTWARE<BR>Copyright (c) 1986-1996 by cisco =
+Systems<BR>2500=20
+      processor with 2048 Kbytes of main memory<BR><BR>F3: =
+3525700+86664+223888=20
+      at 0x3000060<BR><BR>Restricted Rights Legend<BR><BR>Use, =
+duplication, or=20
+      disclosure by the Government is<BR>subject to restrictions as set =
+forth in=20
+      subparagraph<BR>(c) of the Commercial Computer Software -=20
+      Restricted<BR>Rights clause at FAR sec. 52.227-19 and =
+subparagraph<BR>(c)=20
+      (1) (ii) of the Rights in Technical Data and Computer<BR>Software =
+clause=20
+      at DFARS sec. 252.227-7013.<BR><BR>cisco Systems, Inc.<BR>170 West =
+Tasman=20
+      Drive<BR>San Jose, California 95134-1706<BR><BR><BR><BR>Cisco =
+Internetwork=20
+      Operating System Software<BR>IOS (tm) 3000 Software (IGS-I-L), =
+Version=20
+      11.0(16), RELEASE SOFTWARE (fc1)<BR>Copyright (c) 1986-1997 by =
+cisco=20
+      Systems, Inc.<BR>Compiled Tue 24-Jun-97 12:20 by jaturner<BR>Image =
+
+      text-base: 0x0301E644, data-base: 0x00001000<BR><BR>cisco 2500 =
+(68030)=20
+      processor (revision N) with 2048K/2048K bytes of =
+memory.<BR>Processor=20
+      board ID 06907648, with hardware revision 00000001<BR>Bridging=20
+      software.<BR>X.25 software, Version 2.0, NET2, BFE and GOSIP=20
+      compliant.<BR>Basic Rate ISDN software, Version 1.0.<BR>1 =
+Ethernet/IEEE=20
+      802.3 interface.<BR>2 Serial network interfaces.<BR>1 ISDN Basic =
+Rate=20
+      interface.<BR>32K bytes of non-volatile configuration =
+memory.<BR>8192K=20
+      bytes of processor board System flash (Read ONLY)<BR>--- System=20
+      Configuration Dialog ---<BR><BR>At any point you may enter a =
+question mark=20
+      '?' for help.<BR>Use ctrl-c to abort configuration dialog at any=20
+      prompt.<BR>Default settings are in square brackets '[]'.<BR>Would =
+you like=20
+      to enter the initial configuration dialog?=20
+[yes]:</FONT></TD></TR></TBODY></TABLE>
+<P>Mancando ogni configurazione viene richiesto se si desiderano fornire =
+i=20
+parametri delle interfacce mediante una sequenza di domande/risposte,=20
+rispondiamo <B>NO</B> e proseguiamo manualmente.</P>
+<P><B>Router&gt; </B>questo =E8 il prompt del sistema operativo, =E8 =
+composto dal=20
+nome assegnato al router e dal simbolo che contraddistingue il livello =
+di=20
+sicurezza attuale il simbolo del maggiore =E8 il livello utente (livello =
+1) con il=20
+minimo di possibilit=E0.</P>
+<P>Al livello utente si possono ottenere solo alcune informazioni e i =
+comandi=20
+disponibili hanno possibilit=E0 limitate e non consentono modifiche ai =
+parametri=20
+delle interfacce. Inviamo il comando <B>?</B> (aiuto) per ottenere =
+l'elenco=20
+completo dei comandi di questo livello.</P>
+<TABLE id=3DAutoNumber2 style=3D"BORDER-COLLAPSE: collapse" =
+borderColor=3D#111111=20
+cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D1>
+  <TBODY>
+  <TR>
+    <TD width=3D"100%"><FONT face=3DCourier>Router&gt;?<BR>Exec=20
+      commands:<BR>connect Open a terminal connection<BR>disable Turn =
+off=20
+      privileged commands<BR>disconnect Disconnect an existing network=20
+      connection<BR>enable Turn on privileged commands<BR>exit Exit from =
+the=20
+      EXEC<BR>help Description of the interactive help system<BR>lock =
+Lock the=20
+      terminal<BR>login Log in as a particular user<BR>logout Exit from =
+the=20
+      EXEC<BR>mrinfo Request neighbor and version information from a=20
+      multicast<BR>router<BR>mstat Show statistics after multiple =
+multicast=20
+      traceroutes<BR>mtrace Trace reverse multicast path from =
+destination to=20
+      source<BR>name-connection Name an existing network =
+connection<BR>pad Open=20
+      a X.29 PAD connection<BR>ping Send echo messages<BR>ppp Start IETF =
+
+      Point-to-Point Protocol (PPP)<BR>resume Resume an active network=20
+      connection<BR>rlogin Open an rlogin connection<BR>show Show =
+running system=20
+      information<BR>slip Start Serial-line IP (SLIP)<BR>systat Display=20
+      information about terminal lines<BR>telnet Open a telnet=20
+      connection<BR>terminal Set terminal line parameters<BR>traceroute =
+Trace=20
+      route to destination<BR>tunnel Open a tunnel connection<BR>where =
+List=20
+      active connections<BR>x3 Set X.3 parameters on=20
+  PAD<BR>&nbsp;</FONT></TD></TR></TBODY></TABLE>
+<P>Esaminiamo alcuni di questi comandi (quelli pi=F9 usati): enable - =
+show - ping=20
+- telnet - traceroute</P>
+<P>Ogni comando pu=F2 essere scritto in forma abbreviata ed =E8 =
+possibile richiedere=20
+l'aiuto per il completamento dei comandi con i parametri relativi, =
+scrivenda ad=20
+esempio <B>sh</B> in vece di <B>show&nbsp; </B>&nbsp;otterremo lo stesso =
+
+risultato, inoltre scrivendo <B>sh ?</B> otterremo come risposta un =
+elenco di=20
+possibili parametri o comandi per il completamento dell'istruzione.</P>
+<P><B>enable</B> consente il passaggio al livello di sicurezza =
+superiore, quello=20
+dal quale si possono modificare le impostazioni delle interfacce, =
+inizialmente=20
+non =E8 impostata nessuna password, eventualmente richiesta si usi come =
+password=20
+la parola <B>cisco</B>.</P>
+<P><B>show</B> esamina la situazione di funzionamento, il comando deve =
+essere=20
+completato con uno dei parametri seguenti:</P>
+<TABLE id=3DAutoNumber3 style=3D"BORDER-COLLAPSE: collapse" =
+borderColor=3D#111111=20
+cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D1>
+  <TBODY>
+  <TR>
+    <TD width=3D"100%"><FONT face=3DCourier>Router&gt;sh ?<BR>clock =
+Display the=20
+      system clock<BR>history Display the session command =
+history<BR>hosts IP=20
+      domain-name, lookup style, nameservers, and host table<BR>isdn =
+ISDN=20
+      information<BR>ppp PPP parameters and statistics<BR>sessions =
+Information=20
+      about Telnet connections<BR>snmp snmp statistics<BR>terminal =
+Display=20
+      terminal configuration parameters<BR>users Display information =
+about=20
+      terminal lines<BR>version System hardware and software=20
+    status</FONT><BR>&nbsp;</TD></TR></TBODY></TABLE>
+<P><B>ping</B> =E8 usato per verificare la connessione con un host o una =
+
+interfaccia dotata di indirizzo IP , deve essere completato con =
+l'indirizzo IP=20
+del corrispondente.</P>
+<TABLE id=3DAutoNumber4 style=3D"BORDER-COLLAPSE: collapse" =
+borderColor=3D#111111=20
+cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D1>
+  <TBODY>
+  <TR>
+    <TD width=3D"100%"><FONT face=3DCourier>Router&gt;ping=20
+  192.168.0.1</FONT></TD></TR></TBODY></TABLE>
+<P><B>Telnet </B>richiama il client telnet per aprire una connessione =
+con un=20
+altro host , deve essere completato con l'indirizzo IP del =
+corrispondente.</P>
+<P><B>Traceroute</B> visualizza gli indirizzi IP di tutti i punti di =
+passaggio=20
+del pacchetto attraverso la rete fino alla destinazione desiderata , =
+deve essere=20
+completato con l'indirizzo IP del corrispondente.</P>
+<P><B>La cronologia dei comandi dell' IOS</B><BR><BR>In modo =
+completamente=20
+autonomo il Router tiene traccia in un buffer, detto "<FONT=20
+color=3D#ff0000><I>command history</I></FONT>", degli ultimi 10 comandi =
+digitati.=20
+La capacit=E0 del Buffer =E8 dimensionabile dall'utente fino ad un =
+massimo di 256=20
+righe tramite il comando "<FONT color=3D#ff0000><I>history =
+size</I></FONT>" o=20
+"<I><FONT color=3D#ff0000>terminal history size</FONT></I>" se si opera =
+da un=20
+terminale.<BR></P>
+<TABLE style=3D"BORDER-COLLAPSE: collapse" cellSpacing=3D0 =
+cellPadding=3D0 width=3D893=20
+bgColor=3D#ffffff border=3D1>
+  <TBODY>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt; BACKGROUND-COLOR: #ffffff" =
+width=3D346=20
+    height=3D17><FONT color=3D#000000>Ctrl-P o up arrow key</FONT></TD>
+    <TD class=3DDOS style=3D"BACKGROUND-COLOR: #ffffff" =
+width=3D533><FONT=20
+      color=3D#000000>Recalls last (previous) command</FONT></TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12pt; BACKGROUND-COLOR: #ffffff" =
+width=3D346=20
+    height=3D17><FONT color=3D#000000>Ctrl-N o down arrow =
+key</FONT></TD>
+    <TD class=3DDOS style=3D"BACKGROUND-COLOR: #ffffff" =
+width=3D533><FONT=20
+      color=3D#000000>Recalls most recent command</FONT></TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt; BACKGROUND-COLOR: #ffffff" =
+width=3D346=20
+    height=3D17><FONT color=3D#000000>Router&gt; show =
+history</FONT></TD>
+    <TD class=3DDOS style=3D"BACKGROUND-COLOR: #ffffff" =
+width=3D533><FONT=20
+      color=3D#000000>Shows command buffer</FONT></TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt; BACKGROUND-COLOR: #ffffff" =
+width=3D346=20
+    height=3D17><FONT color=3D#000000>Router&gt; terminal history size =
+numbers of=20
+      lines</FONT></TD>
+    <TD class=3DDOS style=3D"BACKGROUND-COLOR: #ffffff" =
+width=3D533><FONT=20
+      color=3D#000000>Sets command buffer size</FONT></TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt; BACKGROUND-COLOR: #ffffff" =
+width=3D346=20
+    height=3D17><FONT color=3D#000000>Router&gt; no terminal =
+editing</FONT></TD>
+    <TD class=3DDOS style=3D"BACKGROUND-COLOR: #ffffff" =
+width=3D533><FONT=20
+      color=3D#000000>Disables advanved editing =
+features</FONT></TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt; BACKGROUND-COLOR: #ffffff" =
+width=3D346=20
+    height=3D17><FONT color=3D#000000>terminal editing</FONT></TD>
+    <TD class=3DDOS style=3D"BACKGROUND-COLOR: #ffffff" =
+width=3D533><FONT=20
+      color=3D#000000>Re-enables advaced editing</FONT></TD></TR>
+  <TR style=3D"HEIGHT: 12.75pt" height=3D17>
+    <TD class=3DDOS style=3D"HEIGHT: 12.75pt; BACKGROUND-COLOR: #ffffff" =
+width=3D346=20
+    height=3D17><FONT color=3D#000000>&lt;tab&gt;</FONT></TD>
+    <TD class=3DDOS style=3D"BACKGROUND-COLOR: #ffffff" =
+width=3D533><FONT=20
+      color=3D#000000>Completes the =
+entry</FONT></TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<P><A=20
+href=3D"http://192.168.63.252/RouterCisco/la_seconda_configurazione.htm">=
+Passiamo=20
+ora al livello superiore per esaminare come si possa configurare ogni=20
+interfaccia.</A></P></BODY></HTML>

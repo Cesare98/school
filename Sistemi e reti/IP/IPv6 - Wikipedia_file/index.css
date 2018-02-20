@@ -1,0 +1,811 @@
+#footer {
+	CLEAR: both
+}
+DIV.floatright {
+	FLOAT: right; MARGIN: 0em 0.5em
+}
+DIV.floatright P {
+	FONT-STYLE: italic
+}
+DIV.floatleft {
+	FLOAT: left; MARGIN: 0em 0.5em
+}
+DIV.floatleft P {
+	FONT-STYLE: italic
+}
+.printfooter {
+	DISPLAY: none
+}
+TABLE {
+	BACKGROUND-COLOR: #ffffff
+}
+TABLE.rimage {
+	FONT-SIZE: smaller; FLOAT: right; MARGIN-BOTTOM: 1em; MARGIN-LEFT: 1em; TEXT-ALIGN: center
+}
+DIV.thumb {
+	MARGIN: 0.5em; WIDTH: auto; TEXT-ALIGN: center
+}
+DIV.thumb DIV {
+	BORDER-RIGHT: #888888 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #888888 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 95%; PADDING-BOTTOM: 2px; OVERFLOW: hidden; BORDER-LEFT: #888888 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #888888 1px solid; BACKGROUND-COLOR: #f7f7f7; TEXT-ALIGN: center
+}
+DIV.thumb DIV  {
+	BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+DIV.thumb IMG {
+	BORDER-RIGHT: #888888 1px solid; BORDER-TOP: #888888 1px solid; BACKGROUND: #ffffff; MARGIN-BOTTOM: 3px; BORDER-LEFT: #888888 1px solid; BORDER-BOTTOM: #888888 1px solid
+}
+DIV.thumbcaption {
+	BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP-STYLE: none! important; BORDER-RIGHT-STYLE: none! important; BORDER-LEFT-STYLE: none! important; BORDER-BOTTOM-STYLE: none! important
+}
+DIV.thumbcaption  {
+	BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP-STYLE: none! important; BORDER-RIGHT-STYLE: none! important; BORDER-LEFT-STYLE: none! important; BORDER-BOTTOM-STYLE: none! important
+}
+DIV.thumbcaption {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 0px! important; PADDING-BOTTOM: 0.2em! important; PADDING-TOP: 0.2em! important; TEXT-ALIGN: left! important
+}
+DIV.tright {
+	FLOAT: right; MARGIN-LEFT: 0.5em
+}
+DIV.tleft {
+	FLOAT: left; MARGIN-RIGHT: 0.5em
+}
+.autocomment {
+	COLOR: #4b4b4b
+}
+#pagehistory SPAN.user {
+	MARGIN-LEFT: 1.4em; MARGIN-RIGHT: 0.4em
+}
+#pagehistory SPAN.minor {
+	FONT-WEIGHT: bold
+}
+#pagehistory LI {
+	BORDER-RIGHT: white 1px solid; BORDER-TOP: white 1px solid; BORDER-LEFT: white 1px solid; BORDER-BOTTOM: white 1px solid
+}
+#pagehistory LI.selected {
+	BORDER-RIGHT: #aaaaaa 1px dashed; BORDER-TOP: #aaaaaa 1px dashed; BORDER-LEFT: #aaaaaa 1px dashed; BORDER-BOTTOM: #aaaaaa 1px dashed; BACKGROUND-COLOR: #f9f9f9
+}
+TABLE.diff {
+	BACKGROUND: white
+}
+TD.diff-otitle {
+	BACKGROUND: #ffffff
+}
+TD.diff-ntitle {
+	BACKGROUND: #ffffff
+}
+TD.diff-addedline {
+	FONT-SIZE: 80%; BACKGROUND: #ccffcc
+}
+TD.diff-deletedline {
+	FONT-SIZE: 80%; BACKGROUND: #ffffaa
+}
+TD.diff-context {
+	FONT-SIZE: 80%; BACKGROUND: #eeeeee
+}
+SPAN.diffchange {
+	FONT-WEIGHT: bold; COLOR: red
+}
+IMG {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+IMG.tex {
+	VERTICAL-ALIGN: middle
+}
+SPAN.texhtml {
+	FONT-FAMILY: serif
+}
+#toc {
+	BORDER-RIGHT: #bba 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #bba 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 95%; PADDING-BOTTOM: 5px; BORDER-LEFT: #bba 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #bba 1px solid; BACKGROUND-COLOR: #f7f8ff; TEXT-ALIGN: center
+}
+.toc {
+	BORDER-RIGHT: #bba 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #bba 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 95%; PADDING-BOTTOM: 5px; BORDER-LEFT: #bba 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #bba 1px solid; BACKGROUND-COLOR: #f7f8ff; TEXT-ALIGN: center
+}
+#toc H2 {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 100%; PADDING-BOTTOM: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.toc H2 {
+	PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 100%; PADDING-BOTTOM: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+#toc UL {
+	PADDING-LEFT: 0px; LIST-STYLE-IMAGE: none; MARGIN-LEFT: 0px; LIST-STYLE-TYPE: none; TEXT-ALIGN: left
+}
+.toc UL {
+	PADDING-LEFT: 0px; LIST-STYLE-IMAGE: none; MARGIN-LEFT: 0px; LIST-STYLE-TYPE: none; TEXT-ALIGN: left
+}
+#toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+.toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+#toc .toctoggle {
+	FONT-SIZE: 94%
+}
+.toc .toctoggle {
+	FONT-SIZE: 94%
+}
+.error {
+	FONT-SIZE: larger; COLOR: red
+}
+.center {
+	WIDTH: 100%; TEXT-ALIGN: center
+}
+.center  {
+	MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+.small {
+	FONT-SIZE: 94%
+}
+.small  {
+	FONT-SIZE: 94%
+}
+TABLE.small {
+	FONT-SIZE: 100%
+}
+.toccolours {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #aaaaaa 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 95%; PADDING-BOTTOM: 5px; BORDER-LEFT: #aaaaaa 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #aaaaaa 1px solid; BACKGROUND-COLOR: #f9f9f9
+}
+#siteNotice {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.redirectText {
+	FONT-SIZE: 150%; MARGIN: 5px
+}
+.allpagesredirect {
+	FONT-STYLE: italic
+}
+.searchmatch {
+	FONT-WEIGHT: bold; COLOR: red
+}
+.sharedUploadNotice {
+	FONT-STYLE: italic
+}
+SPAN.unpatrolled {
+	FONT-WEIGHT: bold; COLOR: red
+}
+SPAN.updatedmarker {
+	COLOR: black; BACKGROUND-COLOR: #00ff00
+}
+SPAN.newpageletter {
+	FONT-WEIGHT: bold; COLOR: black; BACKGROUND-COLOR: yellow
+}
+SPAN.minoreditletter {
+	COLOR: black; BACKGROUND-COLOR: #c5ffe6
+}
+TABLE.gallery {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 2px; BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff
+}
+TABLE.gallery TR {
+	VERTICAL-ALIGN: top
+}
+TABLE.gallery TD {
+	BORDER-RIGHT: white 2px solid; BORDER-TOP: white 2px solid; VERTICAL-ALIGN: top; BORDER-LEFT: white 2px solid; BORDER-BOTTOM: white 2px solid; BACKGROUND-COLOR: #f9f9f9
+}
+DIV.gallerybox {
+	MARGIN: 2px; WIDTH: 150px
+}
+DIV.gallerybox DIV.thumb {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; MARGIN: 2px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; TEXT-ALIGN: center
+}
+DIV.gallerytext {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-SIZE: 94%; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+SPAN.comment {
+	FONT-STYLE: italic
+}
+SPAN.changedby {
+	FONT-SIZE: 95%
+}
+.previewnote {
+	COLOR: #cc0000; TEXT-ALIGN: center
+}
+.editExternally {
+	BORDER-RIGHT: gray 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: gray 1px solid; MARGIN-TOP: 0.5em; PADDING-LEFT: 3px; FONT-SIZE: small; BACKGROUND: #ffffff; FLOAT: left; PADDING-BOTTOM: 3px; BORDER-LEFT: gray 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: gray 1px solid; TEXT-ALIGN: center
+}
+.editExternallyHelp {
+	COLOR: gray; FONT-STYLE: italic
+}
+LI SPAN.deleted {
+	COLOR: #888; FONT-STYLE: italic; TEXT-DECORATION: line-through
+}
+TABLE.mw_metadata {
+	MARGIN-LEFT: 0.5em
+}
+TABLE.mw_metadata CAPTION {
+	FONT-WEIGHT: bold
+}
+TABLE.mw_metadata TH {
+	FONT-WEIGHT: normal
+}
+TABLE.mw_metadata TD {
+	PADDING-RIGHT: 0.1em; PADDING-LEFT: 0.1em; PADDING-BOTTOM: 0.1em; PADDING-TOP: 0.1em
+}
+TABLE.mw_metadata {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-COLLAPSE: collapse; BORDER-BOTTOM-STYLE: none
+}
+TABLE.mw_metadata TD {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #aaaaaa 1px solid; PADDING-LEFT: 4px; BORDER-LEFT: #aaaaaa 1px solid; BORDER-BOTTOM: #aaaaaa 1px solid
+}
+TABLE.mw_metadata TH {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #aaaaaa 1px solid; PADDING-LEFT: 4px; BORDER-LEFT: #aaaaaa 1px solid; BORDER-BOTTOM: #aaaaaa 1px solid
+}
+TABLE.mw_metadata TH {
+	BACKGROUND-COLOR: #f9f9f9
+}
+TABLE.mw_metadata TD {
+	BACKGROUND-COLOR: #fcfcfc
+}
+TABLE.mw_metadata TD.spacer {
+	BORDER-TOP-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+TABLE.collapsed TR.collapsable {
+	DISPLAY: none
+}
+.visualClear {
+	CLEAR: both
+}
+#mw_trackbacks {
+	BORDER-RIGHT: #bbbbff 1px solid; PADDING-RIGHT: 0.2em; BORDER-TOP: #bbbbff 1px solid; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0.2em; BORDER-LEFT: #bbbbff 1px solid; PADDING-TOP: 0.2em; BORDER-BOTTOM: #bbbbff 1px solid; BACKGROUND-COLOR: #eeeeff
+}
+#allmessagestable TH {
+	BACKGROUND-COLOR: #b2b2ff
+}
+#allmessagestable TR.orig {
+	BACKGROUND-COLOR: #ffe2e2
+}
+#allmessagestable TR.new {
+	BACKGROUND-COLOR: #e2ffe2
+}
+#allmessagestable TR.def {
+	BACKGROUND-COLOR: #f0f0ff
+}
+#jump-to-nav {
+	DISPLAY: none
+}
+.IPA {
+	FONT-FAMILY: Chrysanthi Unicode, Doulos SIL, Gentium, GentiumAlt, Code2000, TITUS Cyberbit Basic, DejaVu Sans, Bitstream Vera Sans, Bitstream Cyberbit, Arial Unicode MS, Lucida Sans Unicode, Hiragino Kaku Gothic Pro, Matrix Unicode
+}
+.Unicode {
+	FONT-FAMILY: TITUS Cyberbit Basic, Code2000, Doulos SIL, Chrysanthi Unicode, Bitstream Cyberbit, Bitstream CyberBase, Bitstream Vera, Thryomanes, Gentium, GentiumAlt, Visual Geez Unicode, Lucida Grande, Arial Unicode MS, Microsoft Sans Serif, Lucida Sans Unicode
+}
+.polytonic {
+	FONT-FAMILY: Athena, Gentium, Palatino Linotype, Arial Unicode MS, Lucida Sans Unicode, Lucida Grande, Code2000
+}
+.tList UL {
+	MARGIN-LEFT: 2em; TEXT-INDENT: -2em; LIST-STYLE-TYPE: none; TEXT-ALIGN: left
+}
+.tickerList UL LI {
+	MARGIN-LEFT: 2em; TEXT-INDENT: -2em; LIST-STYLE-TYPE: none; TEXT-ALIGN: left
+}
+.tList UL UL {
+	MARGIN-LEFT: 1.5em; TEXT-INDENT: 0px; LIST-STYLE-TYPE: none; TEXT-ALIGN: left
+}
+.tickerList UL UL LI {
+	MARGIN-LEFT: 1.5em; TEXT-INDENT: 0px; LIST-STYLE-TYPE: none; TEXT-ALIGN: left
+}
+.tAction_deleted:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #ff0000; FONT-FAMILY: monospace; content: " [CANC] "
+}
+.tAction_replaced:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #880088; FONT-FAMILY: monospace; content: " [SOST] "
+}
+.tAction_addedTag:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #dd6600; FONT-FAMILY: monospace; content: " [+TAG] "
+}
+.tAction_removedTag:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #00aa00; FONT-FAMILY: monospace; content: " [-TAG] "
+}
+.tAction_addedBad:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #dd6600; FONT-FAMILY: monospace; content: " [+TAG] "
+}
+.tAction_removedBad:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #00aa00; FONT-FAMILY: monospace; content: " [-TAG] "
+}
+.tAction_addedGood:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #00aa00; FONT-FAMILY: monospace; content: " [+ OK] "
+}
+.tAction_removedGood:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #dd6600; FONT-FAMILY: monospace; content: " [- OK] "
+}
+.tAction_replacedOwn:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #808080; FONT-FAMILY: monospace; content: " [INFO] "
+}
+.tAction_deletedRev:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; COLOR: #808080; FONT-FAMILY: monospace; content: " [INFO] "
+}
+.tUsage {
+	FONT-SIZE: 80%
+}
+.tTemplateEntry {
+	FONT-WEIGHT: bold
+}
+OL.references {
+	FONT-SIZE: 90%
+}
+.references-small {
+	FONT-SIZE: 90%
+}
+.audiolink A {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 16px! important; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Loudspeaker.svg/11px-Loudspeaker.svg.png) no-repeat left center
+}
+.AvvisoTrasferito {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: black 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 5px; BORDER-LEFT: black 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #eef8ff
+}
+.geo-default {
+	DISPLAY: inline
+}
+.geo-nondefault {
+	DISPLAY: none
+}
+.geo-dms {
+	DISPLAY: inline
+}
+.geo-dec {
+	DISPLAY: inline
+}
+.geo-multi-punct {
+	DISPLAY: none
+}
+.longitude .latitude {
+	WHITE-SPACE: nowrap
+}
+.geo {
+	
+}
+.plainlinksneverexpand {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 0px! important; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px! important; PADDING-TOP: 0px! important
+}
+.plainlinksneverexpand .urlexpansion {
+	DISPLAY: none! important
+}
+.plainlinksneverexpand A {
+	PADDING-RIGHT: 0px! important; PADDING-LEFT: 0px! important; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px! important; PADDING-TOP: 0px! important
+}
+.plainlinksneverexpand A.text:unknown {
+	DISPLAY: none! important
+}
+.plainlinksneverexpand A.autonumber:unknown {
+	DISPLAY: none! important
+}
+.arabo {
+	FONT-SIZE: 140%
+}
+.sinottico {
+	CLEAR: right; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #aaaaaa 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 95%; FLOAT: right; PADDING-BOTTOM: 3px; MARGIN: 0px 0px 1em 0.5em; VERTICAL-ALIGN: top; BORDER-LEFT: #aaaaaa 1px solid; WIDTH: 250px; PADDING-TOP: 3px; BORDER-BOTTOM: #aaaaaa 1px solid; BACKGROUND-COLOR: #f9f9f9
+}
+.sinottico TH {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 0em; VERTICAL-ALIGN: top; PADDING-TOP: 0em; BACKGROUND-COLOR: #f2f2f2; TEXT-ALIGN: right
+}
+.sinottico TD {
+	PADDING-RIGHT: 0.2em; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0em; VERTICAL-ALIGN: top; PADDING-TOP: 0em
+}
+.sinottico_testata TH {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; FONT-SIZE: 120%; PADDING-BOTTOM: 0em; PADDING-TOP: 0em; BACKGROUND-COLOR: #dedede; TEXT-ALIGN: center
+}
+.sinottico_piede {
+	FONT-SIZE: 90%; BACKGROUND: #efefef; TEXT-ALIGN: center
+}
+.sinottico_divisione TH {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; FONT-SIZE: 100%; PADDING-BOTTOM: 0em; COLOR: black; PADDING-TOP: 0em; BACKGROUND-COLOR: #eeeeee; TEXT-ALIGN: center
+}
+.messagebox {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 0.2em; BORDER-TOP: #aaa 1px solid; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0.2em; MARGIN: 0px auto 1em; BORDER-LEFT: #aaa 1px solid; WIDTH: 80%; PADDING-TOP: 0.2em; BORDER-BOTTOM: #aaa 1px solid; BACKGROUND-COLOR: #f9f9f9
+}
+.hiddenStructure {
+	DISPLAY: none
+}
+TABLE.wikitable {
+	BORDER-RIGHT: #aaa 1px solid; BORDER-TOP: #aaa 1px solid; BACKGROUND: #f9f9f9; MARGIN: 1em 1em 1em 0px; BORDER-LEFT: #aaa 1px solid; BORDER-BOTTOM: #aaa 1px solid; BORDER-COLLAPSE: collapse
+}
+TABLE.prettytable {
+	BORDER-RIGHT: #aaa 1px solid; BORDER-TOP: #aaa 1px solid; BACKGROUND: #f9f9f9; MARGIN: 1em 1em 1em 0px; BORDER-LEFT: #aaa 1px solid; BORDER-BOTTOM: #aaa 1px solid; BORDER-COLLAPSE: collapse
+}
+TABLE.wikitable TH {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 0.2em; BORDER-TOP: #aaa 1px solid; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0.2em; BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 0.2em; BORDER-BOTTOM: #aaa 1px solid
+}
+TABLE.wikitable TD {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 0.2em; BORDER-TOP: #aaa 1px solid; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0.2em; BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 0.2em; BORDER-BOTTOM: #aaa 1px solid
+}
+TABLE.prettytable TH {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 0.2em; BORDER-TOP: #aaa 1px solid; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0.2em; BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 0.2em; BORDER-BOTTOM: #aaa 1px solid
+}
+TABLE.prettytable TD {
+	BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 0.2em; BORDER-TOP: #aaa 1px solid; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0.2em; BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 0.2em; BORDER-BOTTOM: #aaa 1px solid
+}
+TABLE.wikitable TH {
+	BACKGROUND: #f2f2f2; TEXT-ALIGN: center
+}
+TABLE.prettytable TH {
+	BACKGROUND: #f2f2f2; TEXT-ALIGN: center
+}
+TABLE.wikitable CAPTION {
+	FONT-WEIGHT: bold
+}
+TABLE.prettytable CAPTION {
+	FONT-WEIGHT: bold
+}
+TABLE.avviso {
+	BORDER-RIGHT: #aaa 1px solid; BORDER-TOP: #aaa 1px solid; BACKGROUND: #fbfbfb; MARGIN: 0px 10%; BORDER-LEFT: #1e90ff 10px solid; BORDER-BOTTOM: #aaa 1px solid; BORDER-COLLAPSE: collapse
+}
+TABLE.avviso TH.avviso-testo {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 0.25em; WIDTH: 100%; PADDING-TOP: 0.25em
+}
+TABLE.avviso TD.avviso-testo {
+	PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 0.25em; WIDTH: 100%; PADDING-TOP: 0.25em
+}
+TABLE.avviso TD.avviso-immagine {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: center
+}
+TABLE.avviso TD.avviso-immaginedestra {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 0px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; TEXT-ALIGN: center
+}
+TABLE.avviso-informazioni {
+	BORDER-LEFT: #1e90ff 10px solid
+}
+TABLE.avviso-cancella {
+	BORDER-LEFT: #b22222 10px solid
+}
+TABLE.avviso-importante {
+	BORDER-LEFT: #b22222 10px solid
+}
+TABLE.avviso-contenuto {
+	BORDER-LEFT: #f28500 10px solid
+}
+TABLE.avviso-stile {
+	BORDER-LEFT: #f4c430 10px solid
+}
+TABLE.avviso-statico {
+	BORDER-LEFT: limegreen 10px solid
+}
+TABLE.avviso-struttura {
+	BORDER-LEFT: #9932cc 10px solid
+}
+TABLE.avviso-generico {
+	BORDER-LEFT: #bba 10px solid
+}
+TABLE.avviso-mini {
+	CLEAR: right; FLOAT: right; MARGIN: 0px 0px 0px 1em; WIDTH: 25%
+}
+.itwiki_template_avviso {
+	CLEAR: both; PADDING-BOTTOM: 0.5em; BACKGROUND-COLOR: #eef8ff; TEXT-ALIGN: left
+}
+.itwiki_template_avviso_v {
+	CLEAR: both; FLOAT: right; WIDTH: 16em; BACKGROUND-COLOR: #eef8ff
+}
+.itwiki_template_avviso .intestazione {
+	FONT-WEIGHT: bold
+}
+.itwiki_template_avviso_v .intestazione {
+	FONT-WEIGHT: bold
+}
+.itwiki_template_disclaimer {
+	CLEAR: both; BORDER-RIGHT: #c00000 1px solid; BORDER-TOP: #c00000 1px solid; DISPLAY: block; FONT-SIZE: 90%; BORDER-LEFT: #c00000 1px solid; BORDER-BOTTOM: #c00000 1px solid; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center
+}
+.itwiki_template_disclaimer_v {
+	CLEAR: both; BORDER-RIGHT: #c00000 1px solid; BORDER-TOP: #c00000 1px solid; FLOAT: right; BORDER-LEFT: #c00000 1px solid; BORDER-BOTTOM: #c00000 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.itwiki_template_copyright {
+	CLEAR: both; DISPLAY: block; BACKGROUND-COLOR: #f1f1de; TEXT-ALIGN: left
+}
+.itwiki_template_wikimedia {
+	CLEAR: right; BORDER-RIGHT: #aaa 1px solid; BORDER-TOP: #aaa 1px solid; FONT-SIZE: 90%; FLOAT: right; BORDER-LEFT: #aaa 1px solid; WIDTH: 22em; BORDER-BOTTOM: #aaa 1px solid; BACKGROUND-COLOR: #f9f9f9
+}
+.itwiki_template_wikimedia .floatleft {
+	BORDER-RIGHT: white 0.5em solid; BORDER-TOP: white 0.5em solid; BORDER-LEFT: white 0.5em solid; BORDER-BOTTOM: white 0.5em solid
+}
+.itwiki_template_wikimedia P {
+	TEXT-ALIGN: left
+}
+.itwiki_template_babelbox {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 5px; FLOAT: right; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 0.5em 1em; WIDTH: 20em; PADDING-TOP: 5px
+}
+.itwiki_template_babelbox .intestazione {
+	FONT-WEIGHT: bold; MARGIN-LEFT: 2px; TEXT-ALIGN: center
+}
+.itwiki_template_babel {
+	BORDER-RIGHT: #99b3ff 1px solid; BORDER-TOP: #99b3ff 1px solid; BACKGROUND: #e0e8ff; FLOAT: left; MARGIN: 1px 1px 1px 0px; BORDER-LEFT: #99b3ff 1px solid; WIDTH: 20em; BORDER-BOTTOM: #99b3ff 1px solid
+}
+.itwiki_template_babel .sigla {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.2em; BACKGROUND: #99b3ff; TEXT-ALIGN: center
+}
+.itwiki_template_babel2 {
+	BORDER-RIGHT: #6ef7a7 1px solid; BORDER-TOP: #6ef7a7 1px solid; BACKGROUND: #c5fcdc; FLOAT: left; MARGIN: 1px 1px 1px 0px; BORDER-LEFT: #6ef7a7 1px solid; WIDTH: 20em; BORDER-BOTTOM: #6ef7a7 1px solid
+}
+.itwiki_template_babel2 .sigla {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.2em; BACKGROUND: #6ef7a7; TEXT-ALIGN: center
+}
+.itwiki_template_babel .sigla {
+	WIDTH: 4em
+}
+.itwiki_template_babel2 .sigla {
+	WIDTH: 4em
+}
+.itwiki_template_babel TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 0.9em; PADDING-BOTTOM: 5px; LINE-HEIGHT: 1.2em; PADDING-TOP: 5px
+}
+.itwiki_template_babel2 TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 0.9em; PADDING-BOTTOM: 5px; LINE-HEIGHT: 1.2em; PADDING-TOP: 5px
+}
+.itwiki_template_babelbox .itwiki_template_babel {
+	CLEAR: left
+}
+.itwiki_template_babelbox .itwiki_template_babel2 {
+	CLEAR: left
+}
+.itwiki_template_toc {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #aaaaaa 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 95%; PADDING-BOTTOM: 0px; BORDER-LEFT: #aaaaaa 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #aaaaaa 1px solid; BACKGROUND-COLOR: #f9f9f9
+}
+.radius {
+	moz-border-radius: 1em
+}
+.radius_top {
+	moz-border-radius-topleft: 1em; moz-border-radius-topright: 1em
+}
+.radius_bottom {
+	moz-border-radius-bottomleft: 1em; moz-border-radius-bottomright: 1em
+}
+.rad {
+	moz-border-radius: .5em
+}
+
+@media Print    
+{
+.noprint {
+	DISPLAY: none
+}
+    }
+.NavToggle {
+	FONT-SIZE: 95%; FLOAT: right
+}
+DIV.BoxenVerschmelzen {
+	CLEAR: both; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #aaaaaa 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 95%; PADDING-BOTTOM: 2px; MARGIN: 0.5em 0px 0px; BORDER-LEFT: #aaaaaa 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-COLLAPSE: collapse; TEXT-ALIGN: center
+}
+DIV.NavFrame {
+	CLEAR: both; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #aaaaaa 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 95%; PADDING-BOTTOM: 2px; MARGIN: 0.5em 0px 0px; BORDER-LEFT: #aaaaaa 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-COLLAPSE: collapse; TEXT-ALIGN: center
+}
+DIV.BoxenVerschmelzen DIV.NavFrame {
+	MARGIN: 0px; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+UNKNOWN {
+	
+}
+DIV.NavPic {
+	PADDING-RIGHT: 2px; FLOAT: left; MARGIN: 0px; BACKGROUND-COLOR: #ffffff
+}
+DIV.NavFrame DIV.NavHead {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%; BACKGROUND-COLOR: #efefef
+}
+DIV.NavFrame P {
+	FONT-SIZE: 100%
+}
+DIV.NavFrame DIV.NavContent {
+	FONT-SIZE: 100%
+}
+DIV.NavFrame DIV.NavContent P {
+	FONT-SIZE: 100%
+}
+DIV.NavEnd {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 1px; PADDING-TOP: 0px
+}
+#bodyContent .references SUP {
+	COLOR: #002bb8! important
+}
+UNKNOWN {
+	BACKGROUND-COLOR: #def
+}
+SUP.reference:unknown {
+	BACKGROUND-COLOR: #def
+}
+TABLE.sinossifumetti TH {
+	VERTICAL-ALIGN: top; WIDTH: 35%; COLOR: black; BACKGROUND-COLOR: rgb(239,239,239); TEXT-ALIGN: left; min-width: 35%; max-width: 35%
+}
+TABLE.sinossifumetti TD {
+	VERTICAL-ALIGN: bottom; WIDTH: 65%; COLOR: black; BACKGROUND-COLOR: white; min-width: 65%; max-width: 65%
+}
+TR.sinossifumettibreak {
+	BORDER-TOP: #aaa 1px solid
+}
+UNKNOWN {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.tb-subsection {
+	FONT-SIZE: smaller
+}
+.HopContent {
+	DISPLAY: none
+}
+.HopFrame:hover .HopContent {
+	DISPLAY: block
+}
+.catlinks-allhidden-mostra {
+	DISPLAY: block
+}
+.nowraplinks A {
+	WHITE-SPACE: nowrap
+}
+TABLE.navbox {
+	CLEAR: both; BORDER-RIGHT: #aaa 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #aaa 1px solid; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; MARGIN: auto; BORDER-LEFT: #aaa 1px solid; WIDTH: 100%; PADDING-TOP: 1px; BORDER-BOTTOM: #aaa 1px solid; TEXT-ALIGN: center
+}
+UNKNOWN {
+	MARGIN-TOP: -1px
+}
+.navbox-title {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; TEXT-ALIGN: center
+}
+.navbox-abovebelow {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; TEXT-ALIGN: center
+}
+TABLE.navbox TH {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; TEXT-ALIGN: center
+}
+.navbox-group {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; FONT-WEIGHT: bold; WHITE-SPACE: nowrap; TEXT-ALIGN: right
+}
+.navbox {
+	BACKGROUND: #fdfdfd
+}
+.navbox-subgroup {
+	BACKGROUND: #fdfdfd
+}
+.navbox-list {
+	BORDER-LEFT-COLOR: #fdfdfd; BORDER-BOTTOM-COLOR: #fdfdfd; BORDER-TOP-COLOR: #fdfdfd; BORDER-RIGHT-COLOR: #fdfdfd
+}
+.navbox-title {
+	BACKGROUND: #ccccff
+}
+TABLE.navbox TH {
+	BACKGROUND: #ccccff
+}
+.navbox-abovebelow {
+	BACKGROUND: #ddddff
+}
+.navbox-group {
+	BACKGROUND: #ddddff
+}
+.navbox-subgroup .navbox-title {
+	BACKGROUND: #ddddff
+}
+.navbox-subgroup .navbox-group {
+	BACKGROUND: #e6e6ff
+}
+.navbox-subgroup .navbox-abovebelow {
+	BACKGROUND: #e6e6ff
+}
+.navbox-even {
+	BACKGROUND: #f7f7f7
+}
+.navbox-odd {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.intestazionemusica {
+	BACKGROUND: url(http://upload.wikimedia.org/wikipedia/commons/e/ee/Picto_infobox_music_long.png) no-repeat right top
+}
+#HILL40_dado A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/4/44/HILL40_dado_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_dado A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_dado A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_famiglia A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/8/8f/HILL40_famiglia_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_famiglia A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_famiglia A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_indici A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/a/a3/HILL40_indici_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_indici A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_indici A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_lente A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/4/44/HILL40_lente_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_lente A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_lente A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_libro A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/c/c4/HILL40_libro_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_libro A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_libro A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_meccanismo A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/a/a5/HILL40_meccanismo_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_meccanismo A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_meccanismo A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_molecola A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/a/a3/HILL40_molecola_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_molecola A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_molecola A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_mondo A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/4/40/HILL40_mondo_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_mondo A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_mondo A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_orologio A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/5/5b/HILL40_orologio_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_orologio A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_orologio A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_pigreco A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/a/a3/HILL40_pigreco_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_pigreco A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_pigreco A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_puzzle A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/a/aa/HILL40_puzzle_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_puzzle A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_puzzle A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_tavolozza A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/7/74/HILL40_tavolozza_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_tavolozza A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_tavolozza A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_w A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/it/c/c8/HILL40_w_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_w A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_w A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_stella A {
+	DISPLAY: block; BACKGROUND: url(http://upload.wikimedia.org/wikipedia/commons/6/63/HILL_stella_ROLLOVER.png); WIDTH: 40px; HEIGHT: 40px
+}
+#HILL40_stella A:hover {
+	BACKGROUND-POSITION: 0px -40px
+}
+#HILL40_stella A:active {
+	BACKGROUND-POSITION: 0px -40px
+}
+.BGblue1 {
+	BACKGROUND-POSITION: 50% top; BACKGROUND-IMAGE: url(http://upload.wikimedia.org/wikipedia/commons/3/3e/BGblue1.jpg); BACKGROUND-REPEAT: repeat-x
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0072)http://192.168.63.252/routercisco/la_configurazione_delle_interfacce.htm -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="Content-Language" content="it"> 
+<META name="GENERATOR" content="MSHTML 11.00.9600.16476"> 
+<META name="ProgId" content="FrontPage.Editor.Document"> 
+<META http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<TITLE>Nuova pagina 1</TITLE> </HEAD> 
+<BODY>
+<P><B>Configuriamo le interfacce</B></P>
+<TABLE width="100%" id="AutoNumber4" bordercolor="#111111" style="border-collapse: collapse;" 
+border="1" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT face="Courier">Router#<B>conf ?</B><BR>    memory 
+      Configure from NV memory<BR>    network Configure from a TFTP network 
+      host<BR>    overwrite-network Overwrite NV memory from TFTP network 
+      host<BR>    terminal Configure from the terminal<BR>    
+      &lt;cr&gt;</FONT><BR>&nbsp;</TD></TR></TBODY></TABLE>
+<P>Il comando <B>configure </B>indica il luogo dal quale prelevare la 
+ configurazione delle interfacce, di solito si indicano i parametri mediante il 
+ terminale, useremo quindi il comando <B>configure terminal</B> o abbreviandolo 
+ in <B>conf t</B>.</P>
+<TABLE width="100%" id="AutoNumber5" bordercolor="#111111" style="border-collapse: collapse;" 
+border="1" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT face="Courier">Router#<B>conf t</B><BR>    Enter 
+      configuration commands, one per line. End with CNTL/Z.<BR>    
+      Router(config)#</FONT></TD></TR></TBODY></TABLE>
+<P>Per uscire dalla modalità configurazione e rientrare nella modalità utente si 
+ usano i comandi <B>Exit</B> o la pressione dei tasti <B>Ctrl/Z</B>.</P>
+<P>Il nome del router, che compare all'interno del prompt, può essere assegnato 
+ con il comando <B>HostName</B>, in modalità privilegiata</P>
+<TABLE width="100%" id="AutoNumber8" bordercolor="#111111" style="border-collapse: collapse;" 
+border="1" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT face="Courier">Router(config)#<B>HostName 
+      Tokyo</B></FONT><BR><FONT 
+  face="Courier">Tokyo(config)#</FONT></TD></TR></TBODY></TABLE>
+<P>Si nota il diverso prompt; ora indichiamo quale delle interfacce desideriamo 
+ modificare tra quelle indicate (S0 S1 E0) dal progetto della connessione di 
+ rete.</P>
+<TABLE width="100%" id="AutoNumber6" bordercolor="#111111" style="border-collapse: collapse;" 
+border="1" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT face="Courier">Router(config)#<B>int e0</B><BR>    
+      Router(config-if)#</FONT></TD></TR></TBODY></TABLE>
+<P>e forniamo la configurazione minima per questa interfaccia:</P>
+<TABLE width="100%" id="AutoNumber7" bordercolor="#111111" style="border-collapse: collapse;" 
+border="1" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT face="Courier">Router(config-if)#<B>ip address     
+      192.168.1.90 255.255.255.0</B><BR>    Router(config-if)#<B>no 
+      shutdown</B><BR>    Router(config-if)#<B>^Z</B><BR>    Router#<BR>    
+      %LINK-3-UPDOWN: Interface Ethernet0, changed state to up<BR>    
+      %SYS-5-CONFIG_I: Configured from console by 
+console</FONT></TD></TR></TBODY></TABLE>
+<P>L'indirizzo IP è seguito dalla maschera della sottorete a cui appartiene il 
+ router, si indica quindi il desiderio di attivare la periferica ed infine si 
+ esce dalla configurazione dell'interfaccia; il sistema operativo risponde 
+ attivando lo stato dell'interfaccia ethernet0.</P>
+<P>Si dovrebbe quindi verificare se la connessione è attiva, colleghiamo un cavo 
+ alla presa ethernet e verifichiamo con un ping lo stato della linea.</P>
+<TABLE width="64%" id="AutoNumber9" bordercolor="#111111" style="border-collapse: collapse;" 
+border="1" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD width="100%" align="center"><IMG width="599" height="376" src="Nuova%20pagina%201_file/Esercizio1.jpg" 
+      border="0"></TD></TR></TBODY></TABLE>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></BODY></HTML>

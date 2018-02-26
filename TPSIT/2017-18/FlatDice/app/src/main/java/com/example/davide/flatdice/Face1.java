@@ -16,11 +16,40 @@ import java.util.Random;
 
 public class Face1 extends Fragment {
 
+    private View v;
+    private View tv;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.first_face, container, false);
-        View tv = v.findViewById(R.id.text_view1);
+        Random r = new Random();
+        int number = r.nextInt(6)+1;
+
+        switch (number) {
+            case 1:
+                v = inflater.inflate(R.layout.first_face, container, false);
+                tv = v.findViewById(R.id.text_view1);
+                break;
+            case 2:
+                v = inflater.inflate(R.layout.second_face, container, false);
+                tv = v.findViewById(R.id.text_view2);
+                break;
+            case 3:
+                v = inflater.inflate(R.layout.third_face, container, false);
+                tv = v.findViewById(R.id.text_view3);
+                break;
+            case 4:
+                v = inflater.inflate(R.layout.fourth_face, container, false);;
+                tv = v.findViewById(R.id.text_view4);
+                break;
+            case 5:
+                v=inflater.inflate(R.layout.five_face, container, false);;
+                tv = v.findViewById(R.id.text_view5);
+                break;
+            case 6:
+                v=inflater.inflate(R.layout.six_face, container, false);;
+                tv = v.findViewById(R.id.text_view6);
+                break;
+        }
         Random rnd = new Random();
         int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
         tv.setBackgroundColor(color);

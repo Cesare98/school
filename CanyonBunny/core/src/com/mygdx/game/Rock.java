@@ -72,4 +72,5 @@ public class Rock extends AbstractGameObject {
         true,false);
 
     }
+
 }

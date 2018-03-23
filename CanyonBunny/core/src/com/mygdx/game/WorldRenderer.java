@@ -11,6 +11,7 @@ import com.badlogic.gdx.utils.Disposable;
  */
 
 public class WorldRenderer implements Disposable {
+
     private OrthographicCamera camera;
     private SpriteBatch batch;
     private WorldController worldController;
@@ -29,16 +30,7 @@ public class WorldRenderer implements Disposable {
     }
 
     public void render() {
-        renderTestObjects();
-    }
-
-    private void renderTestObjects() {
-        batch.setProjectionMatrix(camera.combined);
-        batch.begin();
-        for (Sprite sprite : worldController.testSprites) {
-            sprite.draw(batch);
-        }
-        batch.end();
+        renderWorld(batch);
     }
 
     public void resize(int width, int height) {
@@ -50,5 +42,14 @@ public class WorldRenderer implements Disposable {
     @Override
     public void dispose() {
         batch.dispose();
+    }
+
+    private void renderWorld(SpriteBatch batch)
+    {
+     worldController.cameraHelper.applyTo(camera);
+     batch.setProjectionMatrix(camera.combined);
+     batch.begin();
+     worldController.level.render(batch);
+     batch.end();
     }
 }

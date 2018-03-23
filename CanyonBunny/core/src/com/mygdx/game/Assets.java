@@ -10,6 +10,7 @@ import com.badlogic.gdx.assets.AssetErrorListener;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.utils.Disposable;
@@ -31,6 +32,31 @@ public class Assets implements Disposable, AssetErrorListener {
 
     // singleton: prevent instantiation from other classes
     private Assets () {
+    }
+
+    public AssetFonts fonts;
+
+    public class AssetFonts
+    {
+        public final BitmapFont defualtSmall;
+        public final BitmapFont defualtNormal;
+        public final BitmapFont defualtBig;
+
+        public AssetFonts()
+        {
+            //create three font using libgdx's 15px bitmap font
+            defualtSmall = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/Arial.fnt"),true);
+            defualtNormal = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/Arial.fnt"),true);
+            defualtBig = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/Arial.fnt"),true);
+            //set font sizes
+            defualtSmall.getData().setScale(0.75f);
+            defualtNormal.getData().setScale(1.0f);
+            defualtBig.getData().setScale(2.0f);
+            //enable linear texture filtering for smooth fonts
+            defualtSmall.getRegion().getTexture().setFilter(TextureFilter.Linear,TextureFilter.Linear);
+            defualtNormal.getRegion().getTexture().setFilter(TextureFilter.Linear,TextureFilter.Linear);
+            defualtBig.getRegion().getTexture().setFilter(TextureFilter.Linear,TextureFilter.Linear);
+        }
     }
 
     public class AssetBunny {
@@ -83,7 +109,11 @@ public class Assets implements Disposable, AssetErrorListener {
             mountainRight = atlas.findRegion("mountain_right");
             waterOverlay = atlas.findRegion("water_overlay");
         }
+
+
     }
+
+
 
     public void init (AssetManager assetManager) {
         this.assetManager = assetManager;
@@ -107,6 +137,7 @@ public class Assets implements Disposable, AssetErrorListener {
         }
 
         // create game resource objects
+        fonts = new AssetFonts();
         bunny = new AssetBunny(atlas);
         rock = new AssetRock(atlas);
         goldCoin = new AssetGoldCoin(atlas);
@@ -117,6 +148,9 @@ public class Assets implements Disposable, AssetErrorListener {
     @Override
     public void dispose () {
         assetManager.dispose();
+        fonts.defualtNormal.dispose();
+        fonts.defualtSmall.dispose();
+        fonts.defualtBig.dispose();
     }
 
 

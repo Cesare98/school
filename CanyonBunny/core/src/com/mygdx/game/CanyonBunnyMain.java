@@ -5,6 +5,9 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
+import com.mygdx.game.Decorations.Assets;
+import com.mygdx.game.Main.WorldController;
+import com.mygdx.game.Main.WorldRenderer;
 
 public class CanyonBunnyMain implements ApplicationListener {
     private static final String TAG =

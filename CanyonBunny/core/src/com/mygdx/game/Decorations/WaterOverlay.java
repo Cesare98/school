@@ -1,8 +1,8 @@
-package com.mygdx.game;
+package com.mygdx.game.Decorations;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.Vector2;
+import com.mygdx.game.Utility.AbstractGameObject;
 
 /**
  * Created by studente on 22/03/18.

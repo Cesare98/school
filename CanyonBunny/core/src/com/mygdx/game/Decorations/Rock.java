@@ -1,7 +1,8 @@
-package com.mygdx.game;
+package com.mygdx.game.Decorations;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.mygdx.game.Utility.AbstractGameObject;
 
 /**
  * Created by studente on 17/03/18.
@@ -28,8 +29,10 @@ public class Rock extends AbstractGameObject {
         setLength(1);
     }
 
-    public void setLength(int lenght) {
-        this.length = lenght;
+    public void setLength(int length) {
+        this.length = length;
+        //Update bounding box for collision detection
+        bounds.set(0,0,dimension.x*length,dimension.y);
     }
 
     public void incraseLength(int amount) {

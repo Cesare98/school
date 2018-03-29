@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.Decorations;
 
 /**
  * Created by studente on 15/03/18.
@@ -14,6 +14,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.utils.Disposable;
+import com.mygdx.game.Utility.Constants;
 
 
 public class Assets implements Disposable, AssetErrorListener {
@@ -45,9 +46,9 @@ public class Assets implements Disposable, AssetErrorListener {
         public AssetFonts()
         {
             //create three font using libgdx's 15px bitmap font
-            defualtSmall = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/Arial.fnt"),true);
-            defualtNormal = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/Arial.fnt"),true);
-            defualtBig = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/Arial.fnt"),true);
+            defualtSmall = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/arial-15.fnt"),true);
+            defualtNormal = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/arial-15.fnt"),true);
+            defualtBig = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/arial-15.fnt"),true);
             //set font sizes
             defualtSmall.getData().setScale(0.75f);
             defualtNormal.getData().setScale(1.0f);

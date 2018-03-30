@@ -1,19 +1,19 @@
 package com.mygdx.game.Main;
 
 import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputAdapter;
 import com.mygdx.game.Decorations.Rock;
 import com.mygdx.game.GameObject.BunnyHead;
 import com.mygdx.game.GameObject.Feather;
 import com.mygdx.game.GameObject.GoldCoin;
+import com.mygdx.game.GameScreen.MenuScreen;
 import com.mygdx.game.Utility.Level;
 import com.mygdx.game.Utility.CameraHelper;
 import com.mygdx.game.Utility.Constants;
-
-import java.awt.Rectangle;
+import com.badlogic.gdx.math.Rectangle;
 
 /**
  * Created by studente on 10/03/18.
@@ -26,52 +26,56 @@ public class WorldController extends InputAdapter {
     public int score;
     private static final String TAG = WorldController.class.getName();
     public CameraHelper cameraHelper;
+    private float timeLeftGameOverDelay;
+    private Game game;
 
-    public WorldController() {
-        Gdx.input.setInputProcessor(this);
-        cameraHelper = new CameraHelper();
+    public WorldController(Game game) {
+        this.game=game;
         init();
     }
 
     private void initLevel(){
         score =0;
         level = new Level(Constants.LEVEL_01);
+        cameraHelper.setTarget(level.bunnyHead);
     }
 
     private void init() {
         Gdx.input.setInputProcessor(this);
         cameraHelper = new CameraHelper();
         lives = Constants.LIVES_START;
+        timeLeftGameOverDelay = 0;
         initLevel();
 
     }
 
-    private void initTestObjects() {
-    }
-
-    private Pixmap createProceduralPixmap(int width, int height) {
-        Pixmap pixmap = new Pixmap(width, height, Pixmap.Format.RGBA8888);
-        // Fill square with red color at 50% opacity pixmap.setColor(1, 0, 0, 0.5f);
-        pixmap.fill();
-        // Draw a yellow-colored X shape on square
-        pixmap.setColor(1, 1, 0, 1);
-        pixmap.drawLine(0, 0, width, height);
-        pixmap.drawLine(width, 0, 0, height);
-        // Draw a cyan-colored border around square
-        pixmap.setColor(0, 1, 1, 1);
-        pixmap.drawRectangle(0, 0, width, height);
-        return pixmap;
-    }
-
     public void update(float deltaTime) {
         handleDebugInput(deltaTime);
+        if(isGameOver()){timeLeftGameOverDelay-=deltaTime;
+        if(timeLeftGameOverDelay<0)backToMenu();
+        }else{
+        handleInputGame(deltaTime);}
         level.update(deltaTime);
         testCollision();
         cameraHelper.update(deltaTime);
+        if(!isGameOver() && isPlayerInWater())
+        {
+            lives--;
+            if(isGameOver())
+                timeLeftGameOverDelay = Constants.TIME_DELAY_GAME_OVER;
+            else
+                initLevel();
+        }
     }
+
+    public boolean isGameOver(){return lives<0;}
+
+    public boolean isPlayerInWater(){return level.bunnyHead.position.y<-5;}
 
     private void handleDebugInput(float deltaTime) {
         if (Gdx.app.getType() != Application.ApplicationType.Desktop) return;
+
+       if(!cameraHelper.getTarget().equals(level.bunnyHead)){
         // Camera Controls (move)
         float camMoveSpeed = 5 * deltaTime;
         float camMoveSpeedAccelerationFactor = 5;
@@ -97,6 +101,7 @@ public class WorldController extends InputAdapter {
                 -camZoomSpeed);
         if (Gdx.input.isKeyPressed(Keys.SLASH)) cameraHelper.setZoom(1);
     }
+    }
 
     private void moveCamera(float x, float y) {
         x += cameraHelper.getPosition().x;
@@ -111,9 +116,50 @@ public class WorldController extends InputAdapter {
             init();
             Gdx.app.debug(TAG, "Game world resetted");
         }
+        //toggle camera follow
+        else if(keycode == Keys.ENTER)
+        {
+            cameraHelper.setTarget(cameraHelper.hasTarget()?null:level.bunnyHead);
+            Gdx.app.debug(TAG,"camera follow enabled: "+cameraHelper.hasTarget());
+        }
+
+        //Back to menu
+        else if(keycode == Keys.ESCAPE || keycode == Keys.BACK)
+        {
+            backToMenu();
+        }
         return false;
     }
 
+    private void handleInputGame(float deltaTime)
+    {
+        if(cameraHelper.getTarget().equals(level.bunnyHead))
+        {
+            //Player movement
+            if(Gdx.input.isKeyPressed(Keys.LEFT))
+            {
+                level.bunnyHead.velocity.x = -level.bunnyHead.terminalVelocity.x;
+            }else if(Gdx.input.isKeyPressed(Keys.RIGHT))
+            {
+                level.bunnyHead.velocity.x = level.bunnyHead.terminalVelocity.x;
+            }else
+                {
+                    //Execute auto-forward movement on non-desktop platform
+                    if(Gdx.app.getType()!= Application.ApplicationType.Desktop)
+                    {
+                        level.bunnyHead.velocity.x= level.bunnyHead.terminalVelocity.x;
+                    }
+                }
+
+                //bunny jump
+            if(Gdx.input.isTouched() || Gdx.input.isKeyPressed(Keys.SPACE))
+            {
+                level.bunnyHead.setJuming(true);
+            }else{
+                level.bunnyHead.setJuming(false);
+            }
+        }
+    }
 
     //Rectangles for collision detection
     private Rectangle r1 = new Rectangle();
@@ -163,12 +209,13 @@ public class WorldController extends InputAdapter {
     private void onCollisionBunnyHeadWithFeather(Feather feather){
         feather.collected=true;
         score += feather.getScore();
+        level.bunnyHead.setFeatherPowerUP(true);
         Gdx.app.log(TAG,"Feather collected");
     }
 
     private void testCollision()
     {
-        r1.setBounds(level.bunnyHead.bounds);level.bunnyHead.position.x,level.bunnyHead.position.y,
+        r1.set(level.bunnyHead.position.x,level.bunnyHead.position.y,
                 level.bunnyHead.bounds.width,level.bunnyHead.bounds.height);
 
         //test collision:BunnyHead <-> Rocks
@@ -203,4 +250,11 @@ public class WorldController extends InputAdapter {
             break;
         }
     }
+
+    private void backToMenu()
+    {
+        //switch to menu screen
+        game.setScreen(new MenuScreen(game));
+    }
+
 }

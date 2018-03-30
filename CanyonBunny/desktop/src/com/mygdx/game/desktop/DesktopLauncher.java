@@ -19,6 +19,7 @@ public class DesktopLauncher {
             settings.duplicatePadding = false;
             settings.debug = drawDebugOutline;
             TexturePacker.process(settings, "desktop/assets-raw/images", "../CanyonBunny/android/assets/images", "canyonbunny");
+            TexturePacker.process(settings, "desktop/assets-raw/images-ui", "../CanyonBunny/android/assets/images", "canyonbunny-ui");
         }
 
         LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();

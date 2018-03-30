@@ -21,4 +21,10 @@ public class Constants {
     public static final int LIVES_START = 3;
     //Duration of father power-up in seconds
     public static final float ITEM_FEATHER_POWERUP_DURATION=9;
+    //Delay after game over
+    public static final float TIME_DELAY_GAME_OVER =3;
+    public static final String TEXTURE_ATLAS_UI= "../CanyonBunny/android/assets/images/canyonbunny-ui.pack";
+    public static final String TEXTURE_ATLAS_LIBGDX_UI = "../CanyonBunny/android/images/uiskin.atlas";
+    public static final String TEXTURE_SKIN_LIBGDX_UI="../CanyonBunny/assets/images/uiskin.json";
+    public static final String SKIN_CANYONBUNNY_UI="../CannyonBunny/assets/images/canyonbunny-ui.json";
 }

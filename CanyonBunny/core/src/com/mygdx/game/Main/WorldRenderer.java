@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.Disposable;
 import com.mygdx.game.Decorations.Assets;
 import com.mygdx.game.Utility.Constants;
 import com.badlogic.gdx.utils.Align;
+import com.mygdx.game.Utility.GamePrefence;
 
 
 /**
@@ -94,6 +95,7 @@ public class WorldRenderer implements Disposable {
     private void renderGui(SpriteBatch batch) {
         batch.setProjectionMatrix(cameraGUI.combined);
         batch.begin();
+
         // draw collected gold coins icon + text
         // (anchored to top left edge)
         renderGuiScore(batch);
@@ -103,6 +105,9 @@ public class WorldRenderer implements Disposable {
         renderGuiExtraLive(batch);
         // draw FPS text (anchored to bottom right edge)
         renderGuiFpsCounter(batch);
+        //draw FPS text (anchored to bottom right edge)
+        if(GamePrefence.instance.showFPSCounter)
+            renderGuiFpsCounter(batch);
         //draw game over text
         renderGuiGameOverMessage(batch);
         batch.end();

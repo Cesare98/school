@@ -25,7 +25,7 @@ public class DesktopLauncher {
         LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
         cfg.title = "CanyonBunny";
         cfg.width = 800;
-        cfg.height = 480;
+        cfg.height = 400;
 
         new LwjglApplication(new CanyonBunnyMain(), cfg);
     }

@@ -24,7 +24,8 @@ public class Constants {
     //Delay after game over
     public static final float TIME_DELAY_GAME_OVER =3;
     public static final String TEXTURE_ATLAS_UI= "../CanyonBunny/android/assets/images/canyonbunny-ui.pack";
-    public static final String TEXTURE_ATLAS_LIBGDX_UI = "../CanyonBunny/android/images/uiskin.atlas";
-    public static final String TEXTURE_SKIN_LIBGDX_UI="../CanyonBunny/assets/images/uiskin.json";
-    public static final String SKIN_CANYONBUNNY_UI="../CannyonBunny/assets/images/canyonbunny-ui.json";
+    public static final String TEXTURE_ATLAS_LIBGDX_UI = "../CanyonBunny/android/assets/images/uiskin.atlas";
+    public static final String SKIN_LIBGDX_UI="../CanyonBunny/android/assets/images/uiskin.json";
+    public static final String SKIN_CANYONBUNNY_UI="../CanyonBunny/android/assets/images/canyonbunny-ui.json";
+    public static final String PREFERENCES = "canyonbunny.prefs";
 }

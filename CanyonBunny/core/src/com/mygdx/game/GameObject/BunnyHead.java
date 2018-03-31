@@ -4,7 +4,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.mygdx.game.Decorations.Assets;
 import com.mygdx.game.Utility.AbstractGameObject;
+import com.mygdx.game.Utility.CharacterSkin;
 import com.mygdx.game.Utility.Constants;
+import com.mygdx.game.Utility.GamePrefence;
 
 public class BunnyHead extends AbstractGameObject {
 
@@ -59,7 +61,7 @@ public class BunnyHead extends AbstractGameObject {
         timeLeftFeatherPowerUP =0;
     }
 
-    public void setJuming(boolean jumpKeyPressed)
+    public void setJumping(boolean jumpKeyPressed)
     {
         switch (jumpState)
         {
@@ -159,6 +161,9 @@ public class BunnyHead extends AbstractGameObject {
     public void render(SpriteBatch batch)
     {
         TextureRegion reg = null;
+
+        //Apply skin Color
+        batch.setColor(CharacterSkin.values()[GamePrefence.instance.charSkin].getColor());
 
         //Set special color when game object has a feather power-up
         if(hasFeatherPowerUp)

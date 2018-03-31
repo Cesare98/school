@@ -154,9 +154,9 @@ public class WorldController extends InputAdapter {
                 //bunny jump
             if(Gdx.input.isTouched() || Gdx.input.isKeyPressed(Keys.SPACE))
             {
-                level.bunnyHead.setJuming(true);
+                level.bunnyHead.setJumping(true);
             }else{
-                level.bunnyHead.setJuming(false);
+                level.bunnyHead.setJumping(false);
             }
         }
     }

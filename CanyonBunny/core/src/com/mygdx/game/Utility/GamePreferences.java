@@ -4,10 +4,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.math.MathUtils;
 
-public class GamePrefence {
-    public static final String TAG = GamePrefence.class.getName();
+public class GamePreferences {
+    public static final String TAG = GamePreferences.class.getName();
 
-    public static final GamePrefence instance =new GamePrefence();
+    public static final GamePreferences instance =new GamePreferences();
 
     public boolean sound;
     public boolean music;
@@ -19,7 +19,7 @@ public class GamePrefence {
     private Preferences pref;
 
     //singleton: prevent instantiation from other class
-    private GamePrefence()
+    private GamePreferences()
     {
         pref = Gdx.app.getPreferences(Constants.PREFERENCES);
     }

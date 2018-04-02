@@ -39,24 +39,48 @@ public class Assets implements Disposable, AssetErrorListener {
 
     public class AssetFonts
     {
-        public final BitmapFont defualtSmall;
-        public final BitmapFont defualtNormal;
-        public final BitmapFont defualtBig;
+        public  BitmapFont defaultSmall ;
+        public  BitmapFont defaultNormal;
+        public  BitmapFont defaultBig;
 
         public AssetFonts()
         {
             //create three font using libgdx's 15px bitmap font
-            defualtSmall = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/arial-15.fnt"),true);
-            defualtNormal = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/arial-15.fnt"),true);
-            defualtBig = new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/arial-15.fnt"),true);
+            switch (Gdx.app.getType())
+            {
+                case Android:
+                    defaultSmall = new BitmapFont(Gdx.files.internal("images/arial-15.fnt"),true);
+                    break;
+                case Desktop:
+                    defaultSmall =  new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/arial-15.fnt"),true);
+                    break;
+            }
+            switch (Gdx.app.getType())
+            {
+                case Android:
+                    defaultNormal = new BitmapFont(Gdx.files.internal("images/arial-15.fnt"),true);
+                    break;
+                case Desktop:
+                    defaultNormal =  new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/arial-15.fnt"),true);
+                    break;
+            }
+            switch (Gdx.app.getType())
+            {
+                case Android:
+                    defaultBig = new BitmapFont(Gdx.files.internal("images/arial-15.fnt"),true);
+                    break;
+                case Desktop:
+                    defaultBig =  new BitmapFont(Gdx.files.internal("../CanyonBunny/android/assets/images/arial-15.fnt"),true);
+                    break;
+            }
             //set font sizes
-            defualtSmall.getData().setScale(0.75f);
-            defualtNormal.getData().setScale(1.0f);
-            defualtBig.getData().setScale(2.0f);
+            defaultSmall.getData().setScale(0.75f);
+            defaultNormal.getData().setScale(1.0f);
+            defaultBig.getData().setScale(2.0f);
             //enable linear texture filtering for smooth fonts
-            defualtSmall.getRegion().getTexture().setFilter(TextureFilter.Linear,TextureFilter.Linear);
-            defualtNormal.getRegion().getTexture().setFilter(TextureFilter.Linear,TextureFilter.Linear);
-            defualtBig.getRegion().getTexture().setFilter(TextureFilter.Linear,TextureFilter.Linear);
+            defaultSmall.getRegion().getTexture().setFilter(TextureFilter.Linear,TextureFilter.Linear);
+            defaultNormal.getRegion().getTexture().setFilter(TextureFilter.Linear,TextureFilter.Linear);
+            defaultBig.getRegion().getTexture().setFilter(TextureFilter.Linear,TextureFilter.Linear);
         }
     }
 
@@ -121,7 +145,14 @@ public class Assets implements Disposable, AssetErrorListener {
         // set asset manager error handler
         assetManager.setErrorListener(this);
         // load texture atlas
-        assetManager.load(Constants.TEXTURE_ATLAS_OBJECTS, TextureAtlas.class);
+        switch (Gdx.app.getType()){
+            case Android:
+                assetManager.load(Constants.TEXTURE_ATLAS_OBJECTS_ANDROID,TextureAtlas.class);
+                break;
+            case Desktop:
+                assetManager.load(Constants.TEXTURE_ATLAS_OBJECTS_DESKTOP,TextureAtlas.class);
+            break;
+        }
         // start loading assets and wait until finished
         assetManager.finishLoading();
 
@@ -130,8 +161,15 @@ public class Assets implements Disposable, AssetErrorListener {
             Gdx.app.debug(TAG, "asset: " + a);
         }
 
-            TextureAtlas atlas = assetManager.get(Constants.TEXTURE_ATLAS_OBJECTS);
-
+            TextureAtlas atlas = null;
+        switch (Gdx.app.getType()){
+            case Android:
+                atlas = assetManager.get(Constants.TEXTURE_ATLAS_OBJECTS_ANDROID);
+                break;
+            case Desktop:
+                atlas = assetManager.get(Constants.TEXTURE_ATLAS_OBJECTS_DESKTOP);
+                break;
+        }
         // enable texture filtering for pixel smoothing
         for (Texture t : atlas.getTextures()) {
             t.setFilter(TextureFilter.Linear, TextureFilter.Linear);
@@ -149,9 +187,9 @@ public class Assets implements Disposable, AssetErrorListener {
     @Override
     public void dispose () {
         assetManager.dispose();
-        fonts.defualtNormal.dispose();
-        fonts.defualtSmall.dispose();
-        fonts.defualtBig.dispose();
+        fonts.defaultNormal.dispose();
+        fonts.defaultSmall.dispose();
+        fonts.defaultBig.dispose();
     }
 
 

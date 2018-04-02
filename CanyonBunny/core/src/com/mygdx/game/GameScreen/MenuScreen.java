@@ -1,13 +1,12 @@
 package com.mygdx.game.GameScreen;
 
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.Event;
-import com.badlogic.gdx.scenes.scene2d.EventListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.CheckBox;
@@ -21,21 +20,23 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.mygdx.game.Decorations.Assets;
 import com.mygdx.game.Utility.CharacterSkin;
 import com.mygdx.game.Utility.Constants;
-import com.mygdx.game.Utility.GamePrefence;
+import com.mygdx.game.Utility.GamePreferences;
 
 
 public class MenuScreen extends AbstractGameScreen {
 
     private static final String TAG = MenuScreen.class.getName();
+
     private Stage stage;
     private Skin skinCanyonBunny;
     private Skin skinLibgdx;
 
-    //menu
+    // menu
     private Image imgBackground;
     private Image imgLogo;
     private Image imgInfo;
@@ -44,7 +45,7 @@ public class MenuScreen extends AbstractGameScreen {
     private Button btnMenuPlay;
     private Button btnMenuOptions;
 
-    //options
+    // options
     private Window winOptions;
     private TextButton btnWinOptSave;
     private TextButton btnWinOptCancel;
@@ -52,16 +53,14 @@ public class MenuScreen extends AbstractGameScreen {
     private Slider sldSound;
     private CheckBox chkMusic;
     private Slider sldMusic;
-    private SelectBox<CharacterSkin> selCharacterSkin;
+    private SelectBox<CharacterSkin> selCharSkin;
     private Image imgCharSkin;
-    private CheckBox chkShowFPSCounter;
+    private CheckBox chkShowFpsCounter;
 
-    //debug
+    // debug
     private final float DEBUG_REBUILD_INTERVAL = 5.0f;
     private boolean debugEnabled = false;
     private float debugRebuildStage;
-
-    private boolean paused;
 
     public MenuScreen(Game game) {
         super(game);
@@ -78,6 +77,7 @@ public class MenuScreen extends AbstractGameScreen {
                 rebuildStage();
             }
         }
+
         stage.act(deltaTime);
         stage.draw();
         stage.setDebugAll(true);
@@ -90,6 +90,7 @@ public class MenuScreen extends AbstractGameScreen {
 
     @Override
     public void show() {
+
         stage = new Stage(new StretchViewport(Constants.VIEWPORT_GUI_WIDTH, Constants.VIEWPORT_GUI_HEIGHT));
         Gdx.input.setInputProcessor(stage);
         rebuildStage();
@@ -104,30 +105,36 @@ public class MenuScreen extends AbstractGameScreen {
 
     @Override
     public void pause() {
-        paused = true;
-    }
-
-    @Override
-    public void resume() {
-        super.resume();
-        //only called in android!
-        paused = false;
     }
 
     private void rebuildStage() {
-        skinCanyonBunny = new Skin(Gdx.files.internal(Constants.SKIN_CANYONBUNNY_UI),
-                new TextureAtlas(Constants.TEXTURE_ATLAS_UI));
-        skinLibgdx = new Skin(Gdx.files.internal(Constants.SKIN_LIBGDX_UI),
-                new TextureAtlas(Constants.TEXTURE_ATLAS_LIBGDX_UI));
 
-        //build all layers
-        Table layerBackground = buildLayerBackground();
-        Table layerObjects = buildLayerObjects();
+        switch (Gdx.app.getType()){
+            case Android:
+                skinCanyonBunny = new Skin(Gdx.files.internal(Constants.SKIN_CANYONBUNNY_UI_ANDROID), new TextureAtlas(Constants.TEXTURE_ATLAS_UI_ANDROID));
+                break;
+            case Desktop:
+                skinCanyonBunny = new Skin(Gdx.files.internal(Constants.SKIN_CANYONBUNNY_UI_DESKTOP), new TextureAtlas(Constants.TEXTURE_ATLAS_UI_DESKTOP));
+                break;
+        }
+
+        switch (Gdx.app.getType()){
+            case Android:
+                skinLibgdx = new Skin(Gdx.files.internal(Constants.SKIN_LIBGDX_UI_ANDROID), new TextureAtlas(Constants.TEXTURE_ATLAS_LIBGDX_UI_ANDROID));
+                break;
+            case Desktop:
+                skinLibgdx = new Skin(Gdx.files.internal(Constants.SKIN_LIBGDX_UI_DESKTOP), new TextureAtlas(Constants.TEXTURE_ATLAS_LIBGDX_UI_DESKTOP));
+                break;
+        }
+
+        // build all layers
+        Table layerBackground = buildBackgroundLayer();
+        Table layerObjects = buildObjectsLayer();
         Table layerLogos = buildLogosLayer();
         Table layerControls = buildControlsLayer();
         Table layerOptionsWindow = buildOptionsWindowLayer();
 
-        //Assemble stage for menu screen
+        // assemble stage for menu screen
         stage.clear();
         Stack stack = new Stack();
         stage.addActor(stack);
@@ -139,21 +146,21 @@ public class MenuScreen extends AbstractGameScreen {
         stage.addActor(layerOptionsWindow);
     }
 
-    private Table buildLayerBackground() {
+    private Table buildBackgroundLayer() {
         Table layer = new Table();
-        // + background
+        // + Background
         imgBackground = new Image(skinCanyonBunny, "background");
         layer.add(imgBackground);
         return layer;
     }
 
-    private Table buildLayerObjects() {
+    private Table buildObjectsLayer() {
         Table layer = new Table();
         // + Coins
         imgCoins = new Image(skinCanyonBunny, "coins");
         layer.addActor(imgCoins);
         imgCoins.setPosition(135, 80);
-        //+ bunny
+        // + Bunny
         imgBunny = new Image(skinCanyonBunny, "bunny");
         layer.addActor(imgBunny);
         imgBunny.setPosition(355, 40);
@@ -163,14 +170,15 @@ public class MenuScreen extends AbstractGameScreen {
     private Table buildLogosLayer() {
         Table layer = new Table();
         layer.left().top();
-        //Game logo
+        // + Game Logo
         imgLogo = new Image(skinCanyonBunny, "logo");
         layer.add(imgLogo);
         layer.row().expandY();
-        //+ Info logos
+        // + Info Logos
         imgInfo = new Image(skinCanyonBunny, "info");
         layer.add(imgInfo).bottom();
-        if (debugEnabled) layer.debug();
+        if (debugEnabled)
+            layer.debug();
         return layer;
     }
 
@@ -196,29 +204,141 @@ public class MenuScreen extends AbstractGameScreen {
                 onOptionsClicked();
             }
         });
-        if (debugEnabled) layer.debug();
+        if (debugEnabled)
+            layer.debug();
         return layer;
+    }
+
+    private Table buildOptWinAudioSettings() {
+        Table tbl = new Table();
+        // + Title: "Audio"
+        tbl.pad(10, 10, 0, 10);
+        tbl.add(new Label("Audio", skinLibgdx, "default-font", Color.ORANGE)).colspan(3);
+        tbl.row();
+        tbl.columnDefaults(0).padRight(10);
+        tbl.columnDefaults(1).padRight(10);
+        // + Checkbox, "Sound" label, sound volume slider
+        chkSound = new CheckBox("", skinLibgdx);
+        tbl.add(chkSound);
+        tbl.add(new Label("Sound", skinLibgdx));
+        sldSound = new Slider(0.0f, 1.0f, 0.1f, false, skinLibgdx);
+        tbl.add(sldSound);
+        tbl.row();
+        // + Checkbox, "Music" label, music volume slider
+        chkMusic = new CheckBox("", skinLibgdx);
+        tbl.add(chkMusic);
+        tbl.add(new Label("Music", skinLibgdx));
+        sldMusic = new Slider(0.0f, 1.0f, 0.1f, false, skinLibgdx);
+        tbl.add(sldMusic);
+        tbl.row();
+        return tbl;
+    }
+
+    private Table buildOptWinSkinSelection() {
+        Table tbl = new Table();
+        // + Title: "Character Skin"
+        tbl.pad(10, 10, 0, 10);
+        tbl.add(new Label("Character Skin", skinLibgdx, "default-font", Color.ORANGE)).colspan(2);
+        tbl.row();
+        // + Drop down box filled with skin items
+        selCharSkin = new SelectBox<CharacterSkin>(skinLibgdx);
+
+        if (Gdx.app.getType() == Application.ApplicationType.WebGL) {
+            Array<CharacterSkin> items = new Array<CharacterSkin>();
+            CharacterSkin[] arr = CharacterSkin.values();
+            for (int i = 0; i < arr.length; i++) {
+                items.add(arr[i]);
+            }
+            selCharSkin.setItems(items);
+        } else {
+            selCharSkin.setItems(CharacterSkin.values());
+        }
+        selCharSkin.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                onCharSkinSelected(((SelectBox<CharacterSkin>) actor).getSelectedIndex());
+            }
+        });
+        tbl.add(selCharSkin).width(120).padRight(20);
+        // + Skin preview image
+        imgCharSkin = new Image(Assets.instance.bunny.head);
+        tbl.add(imgCharSkin).width(50).height(50);
+        return tbl;
+    }
+
+    private Table buildOptWinDebug() {
+        Table tbl = new Table();
+        // + Title: "Debug"
+        tbl.pad(10, 10, 0, 10);
+        tbl.add(new Label("Debug", skinLibgdx, "default-font", Color.RED)).colspan(3);
+        tbl.row();
+        tbl.columnDefaults(0).padRight(10);
+        tbl.columnDefaults(1).padRight(10);
+        // + Checkbox, "Show FPS Counter" label
+        chkShowFpsCounter = new CheckBox("", skinLibgdx);
+        tbl.add(new Label("Show FPS Counter", skinLibgdx));
+        tbl.add(chkShowFpsCounter);
+        tbl.row();
+        return tbl;
+    }
+
+    private Table buildOptWinButtons() {
+        Table tbl = new Table();
+        // + Separator
+        Label lbl = null;
+        lbl = new Label("", skinLibgdx);
+        lbl.setColor(0.75f, 0.75f, 0.75f, 1);
+        lbl.setStyle(new Label.LabelStyle(lbl.getStyle()));
+        lbl.getStyle().background = skinLibgdx.newDrawable("white");
+        tbl.add(lbl).colspan(2).height(1).width(220).pad(0, 0, 0, 1);
+        tbl.row();
+        lbl = new Label("", skinLibgdx);
+        lbl.setColor(0.5f, 0.5f, 0.5f, 1);
+        lbl.setStyle(new Label.LabelStyle(lbl.getStyle()));
+        lbl.getStyle().background = skinLibgdx.newDrawable("white");
+        tbl.add(lbl).colspan(2).height(1).width(220).pad(0, 1, 5, 0);
+        tbl.row();
+        // + Save Button with event handler
+        btnWinOptSave = new TextButton("Save", skinLibgdx);
+        tbl.add(btnWinOptSave).padRight(30);
+        btnWinOptSave.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                onSaveClicked();
+            }
+        });
+        // + Cancel Button with event handler
+        btnWinOptCancel = new TextButton("Cancel", skinLibgdx);
+        tbl.add(btnWinOptCancel);
+        btnWinOptCancel.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                onCancelClicked();
+            }
+        });
+        return tbl;
     }
 
     private Table buildOptionsWindowLayer() {
         winOptions = new Window("Options", skinLibgdx);
-        // + Audio settings: Sound/music Checkbox and Volume slider
+        // + Audio Settings: Sound/Music CheckBox and Volume Slider
         winOptions.add(buildOptWinAudioSettings()).row();
-        // + Character skin: Selection box (White, Gray, Brown)
+        // + Character Skin: Selection Box (White, Gray, Brown)
         winOptions.add(buildOptWinSkinSelection()).row();
         // + Debug: Show FPS Counter
         winOptions.add(buildOptWinDebug()).row();
         // + Separator and Buttons (Save, Cancel)
         winOptions.add(buildOptWinButtons()).pad(10, 0, 10, 0);
 
-        //Make options window slightly transparent
+        // Make options window slightly transparent
         winOptions.setColor(1, 1, 1, 0.8f);
-        //Hide options window by default
+        // Hide options window by default
         winOptions.setVisible(false);
-        if (debugEnabled) winOptions.debug();
-        //Let Tablelayout recalculate widget size and position
+        if (debugEnabled)
+            winOptions.debug();
+        // Let TableLayout recalculate widget sizes and positions
         winOptions.pack();
-        //Move options window to bottom right corner
+        // Move options window to bottom right corner
         winOptions.setPosition(Constants.VIEWPORT_GUI_WIDTH - winOptions.getWidth() - 50, 50);
         return winOptions;
     }
@@ -227,141 +347,11 @@ public class MenuScreen extends AbstractGameScreen {
         game.setScreen(new GameScreen(game));
     }
 
-    private Table buildOptWinAudioSettings() {
-        Table table = new Table();
-        // + Title: "Audio"
-        table.pad(10, 10, 0, 10);
-        table.add(new Label("Audio", skinLibgdx, "default-font", Color.ORANGE)).colspan(3);
-        table.row();
-        table.columnDefaults(0).padRight(10);
-        table.columnDefaults(1).padRight(10);
-        //+ Checkbox, "Sound" label, sound volume slider
-        chkSound = new CheckBox("", skinLibgdx);
-        table.add(chkSound);
-        table.add(new Label("Sound", skinLibgdx));
-        sldSound = new Slider(0.0f, 1.0f, 0.1f, false, skinLibgdx);
-        table.add(sldSound);
-        table.row();
-        // + Checkbox, "music" label, music volume slider
-        chkMusic = new CheckBox("", skinLibgdx);
-        table.add(chkMusic);
-        table.add(new Label("Music", skinLibgdx));
-        sldMusic = new Slider(0.0f, 1.0f, 0.1f, false, skinLibgdx);
-        table.add(sldMusic);
-        table.row();
-        return table;
-    }
-
-    private Table buildOptWinSkinSelection() {
-        Table table = new Table();
-        // + Title: "Character Skin"
-        table.pad(10, 10, 0, 10);
-        table.add(new Label("Character skin", skinLibgdx, "default-font", Color.ORANGE)).colspan(2);
-        table.row();
-        // + Drop down box filled with skin items
-        selCharacterSkin = new SelectBox<CharacterSkin>(skinLibgdx);
-
-        selCharacterSkin.setItems(CharacterSkin.values());
-
-        selCharacterSkin.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                onCharSkinSelected(((SelectBox<CharacterSkin>) actor).getSelectedIndex());
-            }
-        });
-        table.add(selCharacterSkin).width(120).padRight(20);
-        // + Skin preview image
-        imgCharSkin = new Image(Assets.instance.bunny.head);
-        table.add(imgCharSkin).width(50).height(50);
-        return table;
-    }
-
-    private Table buildOptWinDebug() {
-        Table table = new Table();
-        // + Title: "Debug"
-        table.pad(10, 10, 0, 10);
-        table.add(new Label("Debug", skinLibgdx, "default-font", Color.RED)).colspan(3);
-        table.row();
-        table.columnDefaults(0).padRight(10);
-        table.columnDefaults(1).padRight(10);
-        // + Checkbox: "Show FPS Counter"
-        chkShowFPSCounter = new CheckBox("", skinLibgdx);
-        table.add(new Label("Show FPS Counter", skinLibgdx));
-        table.add(chkShowFPSCounter);
-        table.row();
-        return table;
-    }
-
-    private Table buildOptWinButtons() {
-        Table table = new Table();
-        // + Separator
-        Label label = new Label("", skinLibgdx);
-        label.setColor(0.75f, 0.75f, 0.75f, 1);
-        label.setStyle(new Label.LabelStyle(label.getStyle()));
-        label.getStyle().background = skinLibgdx.newDrawable("white");
-        table.add(label).colspan(2).height(1).width(220).pad(0, 0, 0, 1);
-        table.row();
-        label = new Label("", skinLibgdx);
-        label.setColor(0.5f, 0.5f, 0.5f, 1);
-        label.setStyle(new Label.LabelStyle(label.getStyle()));
-        label.getStyle().background = skinLibgdx.newDrawable("white");
-        table.add(label).colspan(2).height(1).width(220).pad(0, 1, 5, 0);
-        table.row();
-        // + Save Button with event handler
-        btnWinOptSave = new TextButton("Save", skinLibgdx);
-        table.add(btnWinOptSave).padRight(30);
-        btnWinOptSave.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                onSaveClicked();
-            }
-        });
-        //+ cancel Button with event handler
-        table.add(btnWinOptCancel);
-        btnWinOptCancel = new TextButton("Cancel", skinLibgdx);
-        table.add(btnWinOptCancel);
-        btnWinOptCancel.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                onCancelClicked();
-            }
-        });
-        return table;
-    }
-
     private void onOptionsClicked() {
         loadSettings();
         btnMenuPlay.setVisible(false);
         btnMenuOptions.setVisible(false);
         winOptions.setVisible(true);
-    }
-
-    private void loadSettings() {
-        GamePrefence pref = GamePrefence.instance;
-        pref.load();
-        chkSound.setChecked(pref.sound);
-        sldSound.setValue(pref.volSound);
-        chkMusic.setChecked(pref.music);
-        sldMusic.setValue(pref.volSound);
-        selCharacterSkin.setSelectedIndex(pref.charSkin);
-        onCharSkinSelected(pref.charSkin);
-        chkShowFPSCounter.setChecked(pref.showFPSCounter);
-    }
-
-    private void saveSettings() {
-        GamePrefence prefs = GamePrefence.instance;
-        prefs.sound = chkSound.isChecked();
-        prefs.volSound = sldSound.getValue();
-        prefs.music = chkMusic.isChecked();
-        prefs.volMusic = sldMusic.getValue();
-        prefs.charSkin = selCharacterSkin.getSelectedIndex();
-        prefs.showFPSCounter = chkShowFPSCounter.isChecked();
-        prefs.save();
-    }
-
-    private void onCharSkinSelected(int index) {
-        CharacterSkin skin = CharacterSkin.values()[index];
-        imgCharSkin.setColor(skin.getColor());
     }
 
     private void onSaveClicked() {
@@ -373,6 +363,34 @@ public class MenuScreen extends AbstractGameScreen {
         btnMenuPlay.setVisible(true);
         btnMenuOptions.setVisible(true);
         winOptions.setVisible(false);
+    }
+
+    private void onCharSkinSelected(int index) {
+        CharacterSkin skin = CharacterSkin.values()[index];
+        imgCharSkin.setColor(skin.getColor());
+    }
+
+    private void loadSettings() {
+        GamePreferences prefs = GamePreferences.instance;
+        prefs.load();
+        chkSound.setChecked(prefs.sound);
+        sldSound.setValue(prefs.volSound);
+        chkMusic.setChecked(prefs.music);
+        sldMusic.setValue(prefs.volMusic);
+        selCharSkin.setSelectedIndex(prefs.charSkin);
+        onCharSkinSelected(prefs.charSkin);
+        chkShowFpsCounter.setChecked(prefs.showFPSCounter);
+    }
+
+    private void saveSettings() {
+        GamePreferences prefs = GamePreferences.instance;
+        prefs.sound = chkSound.isChecked();
+        prefs.volSound = sldSound.getValue();
+        prefs.music = chkMusic.isChecked();
+        prefs.volMusic = sldMusic.getValue();
+        prefs.charSkin = selCharSkin.getSelectedIndex();
+        prefs.showFPSCounter = chkShowFpsCounter.isChecked();
+        prefs.save();
     }
 
 }

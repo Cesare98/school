@@ -1,5 +1,6 @@
 package com.mygdx.game.GameObject;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.mygdx.game.Decorations.Assets;
@@ -7,6 +8,7 @@ import com.mygdx.game.Utility.AbstractGameObject;
 import com.mygdx.game.Utility.CharacterSkin;
 import com.mygdx.game.Utility.Constants;
 import com.mygdx.game.Utility.GamePreferences;
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 
 public class BunnyHead extends AbstractGameObject {
 
@@ -30,6 +32,7 @@ public class BunnyHead extends AbstractGameObject {
     public JUMP_STATE jumpState;
     public boolean hasFeatherPowerUp;
     public float timeLeftFeatherPowerUP;
+    public ParticleEffect dustParticles = new ParticleEffect();
 
     public BunnyHead(){init();}
 
@@ -59,6 +62,15 @@ public class BunnyHead extends AbstractGameObject {
         //power-ups
         hasFeatherPowerUp=false;
         timeLeftFeatherPowerUP =0;
+
+        //Particles
+        switch(Gdx.app.getType()) {
+            case Android:
+            dustParticles.load(Gdx.files.internal("assets/particles/dust.pfx"), Gdx.files.internal("assets/particles"));
+            break;
+            case Desktop:
+                dustParticles.load(Gdx.files.internal("../CanyonBunny/android/assets/particles/dust.pfx"),Gdx.files.internal("../CanyonBunny/android/assets/particles"));
+        }
     }
 
     public void setJumping(boolean jumpKeyPressed)
@@ -116,6 +128,7 @@ public class BunnyHead extends AbstractGameObject {
                 setFeatherPowerUP(false);
             }
         }
+        dustParticles.update(deltaTime);
     }
 
     public void updateMotionY(float deltaTime)
@@ -124,6 +137,11 @@ public class BunnyHead extends AbstractGameObject {
         {
             case GROUNDED:
                 jumpState=JUMP_STATE.FALLING;
+                if(velocity.x !=0)
+                {
+                    dustParticles.setPosition(position.x+dimension.x/2,position.y);
+                    dustParticles.start();
+                }
                 break;
 
             case JUMP_RISING:
@@ -155,12 +173,18 @@ public class BunnyHead extends AbstractGameObject {
                 }
         }
         if(jumpState != JUMP_STATE.GROUNDED)
+        {
+            dustParticles.allowCompletion();
             super.updateMotionY(deltaTime);
+         }
     }
 
     public void render(SpriteBatch batch)
     {
         TextureRegion reg = null;
+
+        //Draw particles
+        dustParticles.draw(batch);
 
         //Apply skin Color
         batch.setColor(CharacterSkin.values()[GamePreferences.instance.charSkin].getColor());

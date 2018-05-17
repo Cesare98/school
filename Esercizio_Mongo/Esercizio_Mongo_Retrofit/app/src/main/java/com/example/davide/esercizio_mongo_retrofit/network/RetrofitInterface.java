@@ -2,6 +2,8 @@ package com.example.davide.esercizio_mongo_retrofit.network;
 
 import com.example.davide.esercizio_mongo_retrofit.data_model.Response;
 import com.example.davide.esercizio_mongo_retrofit.data_model.User;
+
+import retrofit2.http.DELETE;
 import rx.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -28,4 +30,7 @@ public interface RetrofitInterface {
 
     @POST("users/{email}/password")
     Observable<Response> resetPasswordFinish(@Path("email") String email, @Body User user);
+
+    @DELETE("users/{email}/delete")
+    Observable<Response> deleteAccount(@Path("email")String email);
 }

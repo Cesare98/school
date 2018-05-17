@@ -78,7 +78,6 @@ exports.resetPasswordInit = email =>
     			html: `Hello ${user.name},
 
     			     Your reset password token is <b>${random}</b>. 
-    			If you are viewing this mail from a Android Device click this <a href="http://learn2crack/${random}">link</a>. 
     			The token is valid for only 2 minutes.
 
     			Thanks,

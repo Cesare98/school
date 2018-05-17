@@ -2,7 +2,6 @@ package com.example.davide.esercizio_mongo_retrofit;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.davide.esercizio_mongo_retrofit.Fragments.ChangePasswordDialog;
+import com.example.davide.esercizio_mongo_retrofit.Fragments.DeleteAccountDialog;
 import com.example.davide.esercizio_mongo_retrofit.Utils.Costants;
 import com.example.davide.esercizio_mongo_retrofit.data_model.Response;
 import com.example.davide.esercizio_mongo_retrofit.data_model.User;
@@ -35,6 +35,7 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
     private TextView mTvDate;
     private Button mBtChangePassword;
     private Button mBtLogout;
+    private Button mBtDeleteAccount;
 
     private ProgressBar mProgressbar;
 
@@ -61,10 +62,12 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         mTvDate = (TextView) findViewById(R.id.tv_date);
         mBtChangePassword = (Button) findViewById(R.id.btn_change_password);
         mBtLogout = (Button) findViewById(R.id.btn_logout);
+        mBtDeleteAccount = (Button) findViewById(R.id.btn_delete_account);
         mProgressbar = (ProgressBar) findViewById(R.id.progress);
 
         mBtChangePassword.setOnClickListener(view -> showDialog());
         mBtLogout.setOnClickListener(view -> logout());
+        mBtDeleteAccount.setOnClickListener(view -> deleteAccount());
     }
 
     private void initSharedPreferences() {
@@ -81,6 +84,18 @@ public class ProfileActivity extends AppCompatActivity implements ChangePassword
         editor.putString(Costants.TOKEN,"");
         editor.apply();
         finish();
+    }
+
+    private void deleteAccount()
+    {
+        DeleteAccountDialog fragment = new DeleteAccountDialog();
+
+        Bundle bundle = new Bundle();
+        bundle.putString(Costants.NAME,mTvName.getText().toString());
+        bundle.putString(Costants.EMAIL,mEmail);
+        fragment.setArguments(bundle);
+
+        fragment.show(getFragmentManager(), DeleteAccountDialog.TAG);
     }
 
     private void showDialog(){
